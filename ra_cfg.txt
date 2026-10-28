@@ -591,7 +591,7 @@ FSP Configuration
       Extra: RS-485: DE Pin Polarity: Active High
       Extra: RS-485: DE Port Number: Disabled
       Extra: RS-485: DE Pin Number: Disabled
-      Interrupts: Callback: NULL
+      Interrupts: Callback: wireless_uart_callback
       Interrupts: Receive Interrupt Priority: Priority 12
       Interrupts: Transmit Data Empty Interrupt Priority: Priority 12
       Interrupts: Transmit End Interrupt Priority: Priority 12

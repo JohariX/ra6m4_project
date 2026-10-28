@@ -346,7 +346,7 @@ build CMakeFiles/generate_sbd_ra6m4 | ${cmake_ninja_workdir}CMakeFiles/generate_
 # Custom command for ra6m4.sbd
 
 build ra6m4.sbd | ${cmake_ninja_workdir}ra6m4.sbd: CUSTOM_COMMAND ra6m4.elf || ra6m4.elf
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\works\C\ra6m4\build\Debug && echo "Running RASC post-build to generate Smart Bundle file for ra6m4:" && echo C:\renesas_toolchain\sc\ra\fsp_6.6.0\eclipse\rasc.exe -nosplash --launcher.suppressErrors --gensmartbundle --devicefamily ra --compiler LLVMARM --toolchainversion 22.1.0 --buildconfiguration Debug C:/works/C/ra6m4/configuration.xml C:/works/C/ra6m4/build/Debug/ra6m4.elf && C:\renesas_toolchain\sc\ra\fsp_6.6.0\eclipse\rasc.exe -nosplash --launcher.suppressErrors --gensmartbundle --devicefamily ra --compiler LLVMARM --toolchainversion 22.1.0 --buildconfiguration Debug C:/works/C/ra6m4/configuration.xml C:/works/C/ra6m4/build/Debug/ra6m4.elf 2> rasc_cmd_log.txt"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\works\C\ra6m4\build\Debug && echo "Running RASC post-build to generate Smart Bundle file for ra6m4:" && echo C:/renesas_toolchain/sc/ra/fsp_6.6.0/eclipse/rasc.exe -nosplash --launcher.suppressErrors --gensmartbundle --devicefamily ra --compiler LLVMARM --toolchainversion 22.1.0 --buildconfiguration Debug C:/works/C/ra6m4/configuration.xml C:/works/C/ra6m4/build/Debug/ra6m4.elf && C:\renesas_toolchain\sc\ra\fsp_6.6.0\eclipse\rasc.exe -nosplash --launcher.suppressErrors --gensmartbundle --devicefamily ra --compiler LLVMARM --toolchainversion 22.1.0 --buildconfiguration Debug C:/works/C/ra6m4/configuration.xml C:/works/C/ra6m4/build/Debug/ra6m4.elf 2> rasc_cmd_log.txt"
   DESC = Generating ra6m4.sbd
   restat = 1
 

@@ -368,7 +368,7 @@ sci_uart_instance_ctrl_t     g_uart1_ctrl;
                 .data_bits           = UART_DATA_BITS_8,
                 .parity              = UART_PARITY_OFF,
                 .stop_bits           = UART_STOP_BITS_1,
-                .p_callback          = NULL,
+                .p_callback          = wireless_uart_callback,
                 .p_context           = NULL,
                 .p_extend            = &g_uart1_cfg_extend,
 #define RA_NOT_DEFINED (1)

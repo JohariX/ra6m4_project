@@ -33,8 +33,8 @@ void can_callback(can_callback_args_t * p_args);
             extern const uart_cfg_t g_uart1_cfg;
             extern const sci_uart_extended_cfg_t g_uart1_cfg_extend;
 
-            #ifndef NULL
-            void NULL(uart_callback_args_t * p_args);
+            #ifndef wireless_uart_callback
+            void wireless_uart_callback(uart_callback_args_t * p_args);
             #endif
 /** Timer on GPT Instance. */
 extern const timer_instance_t g_timer3;
