@@ -1,0 +1,1487 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 RAM_START = 0x20000000
+       0        0        0     1 RAM_LENGTH = 0x00040000
+       0        0        0     1 FLASH_START = 0x00000000
+       0        0        0     1 FLASH_LENGTH = 0x00100000
+       0        0        0     1 DATA_FLASH_START = 0x08000000
+       0        0        0     1 DATA_FLASH_LENGTH = 0x00002000
+       0        0        0     1 QSPI_FLASH_START = 0x60000000
+       0        0        0     1 QSPI_FLASH_LENGTH = 0x04000000
+       0        0        0     1 OSPI0_CS0_START = 0x68000000
+       0        0        0     1 OSPI0_CS0_LENGTH = 0x08000000
+       0        0        0     1 OSPI0_CS1_START = 0x70000000
+       0        0        0     1 OSPI0_CS1_LENGTH = 0x10000000
+       0        0        0     1 OPTION_SETTING_OFS0_START = 0x0100a100
+       0        0        0     1 OPTION_SETTING_OFS0_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_DUALSEL_START = 0x0100a110
+       0        0        0     1 OPTION_SETTING_DUALSEL_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_OFS1_START = 0x0100a180
+       0        0        0     1 OPTION_SETTING_OFS1_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_BANKSEL_START = 0x0100a190
+       0        0        0     1 OPTION_SETTING_BANKSEL_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_BPS_START = 0x0100a1c0
+       0        0        0     1 OPTION_SETTING_BPS_LENGTH = 0x0000000c
+       0        0        0     1 OPTION_SETTING_PBPS_START = 0x0100a1e0
+       0        0        0     1 OPTION_SETTING_PBPS_LENGTH = 0x0000000c
+       0        0        0     1 OPTION_SETTING_OFS1_SEC_START = 0x0100a200
+       0        0        0     1 OPTION_SETTING_OFS1_SEC_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_BANKSEL_SEC_START = 0x0100a210
+       0        0        0     1 OPTION_SETTING_BANKSEL_SEC_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_BPS_SEC_START = 0x0100a240
+       0        0        0     1 OPTION_SETTING_BPS_SEC_LENGTH = 0x0000000c
+       0        0        0     1 OPTION_SETTING_PBPS_SEC_START = 0x0100a260
+       0        0        0     1 OPTION_SETTING_PBPS_SEC_LENGTH = 0x0000000c
+       0        0        0     1 OPTION_SETTING_OFS1_SEL_START = 0x0100a280
+       0        0        0     1 OPTION_SETTING_OFS1_SEL_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_BANKSEL_SEL_START = 0x0100a290
+       0        0        0     1 OPTION_SETTING_BANKSEL_SEL_LENGTH = 0x00000004
+       0        0        0     1 OPTION_SETTING_BPS_SEL_START = 0x0100a2c0
+       0        0        0     1 OPTION_SETTING_BPS_SEL_LENGTH = 0x0000000c
+60000000 60000000        0     1 .qspi_flash.startof
+60000000 60000000        0     1         __ddsc_QSPI_FLASH_START = . 
+68000000 68000000        0     1 .ospi0_cs0.startof
+68000000 68000000        0     1         __ddsc_OSPI0_CS0_START = . 
+68000000 68000000        0     1 __ospi0_cs0_from_qspi_flash$$
+68000000 68000000        0     1         __ospi0_cs0_from_qspi_flash$$Base = . 
+68000000 68000000        0     1         __ospi0_cs0_from_qspi_flash$$Load = LOADADDR(__ospi0_cs0_from_qspi_flash$$) 
+68000000 68000000        0     1         __ospi0_cs0_from_qspi_flash$$Limit = . 
+20000000 20000000        0     1 .ram.startof
+20000000 20000000        0     1         __ddsc_RAM_START = . 
+20000000 20000000        0     1 __ram_dtc_vector$$
+20000000 20000000        0     1         __ram_dtc_vector$$Base = . 
+20000000 20000000        0     1         __ram_dtc_vector$$Limit = . 
+20000000 20000000        0     1 __ram_from_qspi_flash$$
+20000000 20000000        0     1         __ram_from_qspi_flash$$Base = . 
+20000000 20000000        0     1         __ram_from_qspi_flash$$Load = LOADADDR(__ram_from_qspi_flash$$) 
+20000000 20000000        0     1         __ram_from_qspi_flash$$Limit = . 
+60000000 60000000        0     1 __qspi_flash_readonly$$
+60000000 60000000        0     1         __qspi_flash_readonly$$Base = . 
+60000000 60000000        0     1         __qspi_flash_readonly$$Limit = . 
+60000000 60000000        0     1 __qspi_flash_noinit$$
+60000000 60000000        0     1         __qspi_flash_noinit$$Base = . 
+60000000 60000000        0     1         __qspi_flash_noinit$$Limit = . 
+60000000 60000000        0     1 .qspi_flash.endof
+60000000 60000000        0     1         __ddsc_QSPI_FLASH_END = . 
+70000000 70000000        0     1 .ospi0_cs1.startof
+70000000 70000000        0     1         __ddsc_OSPI0_CS1_START = . 
+68000000 68000000        0     1 __ospi0_cs0_from_ospi0_cs1$$
+68000000 68000000        0     1         __ospi0_cs0_from_ospi0_cs1$$Base = . 
+68000000 68000000        0     1         __ospi0_cs0_from_ospi0_cs1$$Load = LOADADDR(__ospi0_cs0_from_ospi0_cs1$$) 
+68000000 68000000        0     1         __ospi0_cs0_from_ospi0_cs1$$Limit = . 
+20000000 20000000        0     1 __ram_from_ospi0_cs1$$
+20000000 20000000        0     1         __ram_from_ospi0_cs1$$Base = . 
+20000000 20000000        0     1         __ram_from_ospi0_cs1$$Load = LOADADDR(__ram_from_ospi0_cs1$$) 
+20000000 20000000        0     1         __ram_from_ospi0_cs1$$Limit = . 
+70000000 70000000        0     1 __ospi0_cs1_readonly$$
+70000000 70000000        0     1         __ospi0_cs1_readonly$$Base = . 
+70000000 70000000        0     1         __ospi0_cs1_readonly$$Limit = . 
+70000000 70000000        0     1 __ospi0_cs1_noinit$$
+70000000 70000000        0     1         __ospi0_cs1_noinit$$Base = . 
+70000000 70000000        0     1         __ospi0_cs1_noinit$$Limit = . 
+70000000 70000000        0     1 .ospi0_cs1.endof
+70000000 70000000        0     1         __ddsc_OSPI0_CS1_END = . 
+ 8000000  8000000        0     1 .data_flash.startof
+ 8000000  8000000        0     1         __ddsc_DATA_FLASH_START = . 
+68000000 68000000        0     1 __ospi0_cs0_from_data_flash$$
+68000000 68000000        0     1         __ospi0_cs0_from_data_flash$$Base = . 
+68000000 68000000        0     1         __ospi0_cs0_from_data_flash$$Load = LOADADDR(__ospi0_cs0_from_data_flash$$) 
+68000000 68000000        0     1         __ospi0_cs0_from_data_flash$$Limit = . 
+20000000 20000000        0     1 __ram_from_data_flash$$
+20000000 20000000        0     1         __ram_from_data_flash$$Base = . 
+20000000 20000000        0     1         __ram_from_data_flash$$Load = LOADADDR(__ram_from_data_flash$$) 
+20000000 20000000        0     1         __ram_from_data_flash$$Limit = . 
+ 8000000  8000000        0     1 __data_flash_readonly$$
+ 8000000  8000000        0     1         __data_flash_readonly$$Base = . 
+ 8000000  8000000        0     1         __data_flash_readonly$$Limit = . 
+ 8000000  8000000        0     1 __data_flash_noinit$$
+ 8000000  8000000        0     1         __data_flash_noinit$$Base = . 
+ 8000000  8000000        0     1         __data_flash_noinit$$Limit = . 
+ 8000000  8000000        0     1 .data_flash.endof
+ 8000000  8000000        0     1         __ddsc_DATA_FLASH_END = . 
+       0        0        0     1 .flash.startof
+       0        0        0     1         __ddsc_FLASH_START = . 
+       0        0       74     4 __flash_vectors$$
+       0        0        0     1         __flash_vectors$$Base = . 
+       0        0        0     1         _VECTORS = . 
+       0        0       40     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj:(.fixed_vectors)
+       0        0       40     1                 __Vectors
+      40       40       34     4         CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj:(.application_vectors)
+      40       40       34     1                 g_vector_table
+      74       74        0     1         __flash_vectors$$Limit = . 
+      74       74        0     1 __flash_noinit$$
+      74       74        0     1         __flash_noinit$$Base = . 
+      74       74        0     1         __flash_noinit$$Limit = . 
+68000000 68000000        0     1 __ospi0_cs0_from_flash$$
+68000000 68000000        0     1         __ospi0_cs0_from_flash$$Base = . 
+68000000 68000000        0     1         __ospi0_cs0_from_flash$$Load = LOADADDR(__ospi0_cs0_from_flash$$) 
+68000000 68000000        0     1         __ospi0_cs0_from_flash$$Limit = . 
+68000000 68000000        0     1 __ospi0_cs0_noinit_nocache$$
+68000000 68000000        0     1         __ospi0_cs0_noinit_nocache$$Base = . 
+68000000 68000000        0     1         __ospi0_cs0_noinit_nocache$$Limit = . 
+68000000 68000000        0     1 __ospi0_cs0_zero_nocache$$
+68000000 68000000        0     1         __ospi0_cs0_zero_nocache$$Base = . 
+68000000 68000000        0     1         . = ALIGN(32)
+68000000 68000000        0     1         __ospi0_cs0_zero_nocache$$Limit = . 
+68000000 68000000        0     1 __ospi0_cs0_noinit$$
+68000000 68000000        0     1         __ospi0_cs0_noinit$$Base = . 
+68000000 68000000        0     1         __ospi0_cs0_noinit$$Limit = . 
+68000000 68000000        0     1 __ospi0_cs0_zero$$
+68000000 68000000        0     1         __ospi0_cs0_zero$$Base = . 
+68000000 68000000        0     1         __ospi0_cs0_zero$$Limit = . 
+68000000 68000000        0     1 .ospi0_cs0.endof
+68000000 68000000        0     1         __ddsc_OSPI0_CS0_END = . 
+20000000       74      158     4 __ram_from_flash$$
+20000000       74        0     1         __ram_from_flash$$Base = . 
+20000000       74        0     1         __ram_from_flash$$Load = LOADADDR(__ram_from_flash$$) 
+20000000       74       10     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.data.g_can0_bit_timing_cfg)
+20000000       74       10     1                 g_can0_bit_timing_cfg
+20000010       84       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.data.g_can0_mailbox_mask)
+20000010       84       20     1                 g_can0_mailbox_mask
+20000030       a4      100     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.data.g_can0_mailbox)
+20000030       a4      100     1                 g_can0_mailbox
+20000130      1a4       18     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.data.g_can0_rx_fifo_cfg)
+20000130      1a4       18     1                 g_can0_rx_fifo_cfg
+20000148      1bc        4     1         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.data.g_uart1_baud_setting)
+20000148      1bc        4     1                 g_uart1_baud_setting
+2000014c      1c0        4     1         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.data.g_uart0_baud_setting)
+2000014c      1c0        4     1                 g_uart0_baud_setting
+20000150      1c4        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.data.g_kp_int)
+20000150      1c4        4     1                 g_kp_int
+20000154      1c8        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.data.g_ki_int)
+20000154      1c8        4     1                 g_ki_int
+20000158      1cc        0     1         __ram_from_flash$$Limit = . 
+20000160 20000160        0     1 __ram_noinit_nocache$$
+20000160 20000160        0     1         __ram_noinit_nocache$$Base = . 
+20000160 20000160        0     1         __ram_noinit_nocache$$Limit = . 
+20000160 20000160        0     1 __ram_zero_nocache$$
+20000160 20000160        0     1         __ram_zero_nocache$$Base = . 
+20000160 20000160        0     1         . = ALIGN(32)
+20000160 20000160        0     1         __ram_zero_nocache$$Limit = . 
+20000160 20000160      41c     8 __ram_noinit$$
+20000160 20000160        0     1         __ram_noinit$$Base = . 
+20000160 20000160      400     8         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj:(.bss.g_main_stack)
+20000160 20000160      400     1                 g_main_stack
+20000560 20000560       1c     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.ram_noinit)
+20000560 20000560       1c     1                 g_clock_freq
+2000057c 2000057c        0     1         __ram_noinit$$Limit = . 
+2000057c 2000057c      278     4 __ram_zero$$
+2000057c 2000057c        0     1         __ram_zero$$Base = . 
+2000057c 2000057c        4     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj:(.bss.SystemCoreClock)
+2000057c 2000057c        4     1                 SystemCoreClock
+20000580 20000580       40     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj:(.bss.g_bsp_group_irq_sources)
+20000580 20000580       40     1                 g_bsp_group_irq_sources
+200005c0 200005c0        4     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_io.c.obj:(.bss.g_protect_pfswe_counter)
+200005c0 200005c0        4     1                 g_protect_pfswe_counter
+200005c4 200005c4       34     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj:(.bss.gp_renesas_isr_context)
+200005c4 200005c4       34     1                 gp_renesas_isr_context
+200005f8 200005f8        a     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.bss.g_protect_counters)
+200005f8 200005f8        a     1                 g_protect_counters
+20000604 20000604        8     4         CMakeFiles/ra6m4.elf.dir/ra_gen/common_data.c.obj:(.bss.g_ioport_ctrl)
+20000604 20000604        8     1                 g_ioport_ctrl
+2000060c 2000060c       28     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.bss.g_can0_ctrl)
+2000060c 2000060c       28     1                 g_can0_ctrl
+20000634 20000634       30     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.bss.g_uart1_ctrl)
+20000634 20000634       30     1                 g_uart1_ctrl
+20000664 20000664       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.bss.g_timer3_ctrl)
+20000664 20000664       20     1                 g_timer3_ctrl
+20000684 20000684       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.bss.g_timer0_ctrl)
+20000684 20000684       20     1                 g_timer0_ctrl
+200006a4 200006a4       30     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.bss.g_uart0_ctrl)
+200006a4 200006a4       30     1                 g_uart0_ctrl
+200006d4 200006d4       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.bss.g_timer2_ctrl)
+200006d4 200006d4       20     1                 g_timer2_ctrl
+200006f4 200006f4       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.bss.g_timer1_ctrl)
+200006f4 200006f4       20     1                 g_timer1_ctrl
+20000714 20000714        2     2         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_can_v_ref)
+20000714 20000714        2     1                 g_can_v_ref
+20000716 20000716        2     2         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_can_w_ref)
+20000716 20000716        2     1                 g_can_w_ref
+20000718 20000718        1     1         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_can_mode)
+20000718 20000718        1     1                 g_can_mode
+20000719 20000719        1     1         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_can_flags)
+20000719 20000719        1     1                 g_can_flags
+2000071a 2000071a        1     1         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_can_seq)
+2000071a 2000071a        1     1                 g_can_seq
+2000071c 2000071c        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_can_age_ms)
+2000071c 2000071c        4     1                 g_can_age_ms
+20000720 20000720        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_tick_ms)
+20000720 20000720        4     1                 g_tick_ms
+20000724 20000724        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_last_cmd_ms)
+20000724 20000724        4     1                 g_last_cmd_ms
+20000728 20000728        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_left_target)
+20000728 20000728        4     1                 g_left_target
+2000072c 2000072c        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_right_target)
+2000072c 2000072c        4     1                 g_right_target
+20000730 20000730        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_speed_l)
+20000730 20000730        4     1                 g_speed_l
+20000734 20000734        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_speed_r)
+20000734 20000734        4     1                 g_speed_r
+20000738 20000738        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_left_ramp)
+20000738 20000738        4     1                 g_left_ramp
+2000073c 2000073c        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_right_ramp)
+2000073c 2000073c        4     1                 g_right_ramp
+20000740 20000740        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_kd_int)
+20000740 20000740        4     1                 g_kd_int
+20000744 20000744        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_il)
+20000744 20000744        4     1                 g_il
+20000748 20000748        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_prev_err_l)
+20000748 20000748        4     1                 g_prev_err_l
+2000074c 2000074c        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_left_duty)
+2000074c 2000074c        4     1                 g_left_duty
+20000750 20000750        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_ir)
+20000750 20000750        4     1                 g_ir
+20000754 20000754        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_prev_err_r)
+20000754 20000754        4     1                 g_prev_err_r
+20000758 20000758        4     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_right_duty)
+20000758 20000758        4     1                 g_right_duty
+2000075c 2000075c       48     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_rx_uart0)
+2000075c 2000075c       48     1                 g_rx_uart0
+200007a4 200007a4       48     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_rx_uart1)
+200007a4 200007a4       48     1                 g_rx_uart1
+200007ec 200007ec        1     1         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.bss.g_can_tx_seq)
+200007ec 200007ec        1     1                 g_can_tx_seq
+200007f0 200007f0        4     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(tls.c.o):(.bss.__tls)
+200007f0 200007f0        4     1                 __tls
+200007f4 200007f4        0     1         __ram_zero$$Limit = . 
+200007f4 200007f4        0     1 __ram_tdata$$
+200007f4 200007f4        0     1         __ram_tdata$$Base = . 
+200007f4 200007f4        0     1         __ram_tdata$$Load = LOADADDR(__ram_tdata$$) 
+200007f4 200007f4        0     1         __ram_tdata$$Limit = . 
+200007f4 200007f4        0     1 __ram_tbss$$
+200007f4 200007f4        0     1         __ram_tbss$$Base = . 
+200007f4 200007f4        0     1         __ram_tbss$$Limit = . 
+200007f8 200007f8        0     1 __ram_thread_stack$$
+200007f8 200007f8        0     1         __ram_thread_stack$$Base = . 
+200007f8 200007f8        0     1         __ram_thread_stack$$Limit = . 
+20000800 20000800        0     1 .ram.endof
+20000800 20000800        0     1         __ddsc_RAM_END = . 
+20000800 20000800        0     1 .ram.flat_nsc
+20000800 20000800        0     1         __ddsc_RAM_NSC = . 
+     1d0      1d0     5cc6     8 __flash_readonly$$
+     1d0      1d0        0     1         __flash_readonly$$Base = . 
+     1d0      1d0        a     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj:(.text.Reset_Handler)
+     1d0      1d0        0     1                 $t
+     1d1      1d1        a     1                 Reset_Handler
+     1da      1da        4     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj:(.text.Default_Handler)
+     1da      1da        0     1                 $t
+     1db      1db        4     1                 Default_Handler
+     1db      1db        4     1                 HardFault_Handler
+     1db      1db        4     1                 MemManage_Handler
+     1db      1db        4     1                 BusFault_Handler
+     1db      1db        4     1                 UsageFault_Handler
+     1db      1db        4     1                 SecureFault_Handler
+     1db      1db        4     1                 SVC_Handler
+     1db      1db        4     1                 DebugMon_Handler
+     1db      1db        4     1                 PendSV_Handler
+     1db      1db        4     1                 SysTick_Handler
+     1e0      1e0       e0     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj:(.text.SystemInit)
+     1e0      1e0        0     1                 $t
+     1e1      1e1       e0     1                 SystemInit
+     2c0      2c0       5a     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj:(.text.SystemRuntimeInit)
+     2c0      2c0        0     1                 $t
+     2c1      2c1       5a     1                 SystemRuntimeInit
+     31a      31a       2c     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.text.SystemCoreClockUpdate)
+     31a      31a        0     1                 $t
+     31b      31b       2c     1                 SystemCoreClockUpdate
+     348      348      138     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.text.bsp_clock_init)
+     348      348        0     1                 $t
+     349      349      138     1                 bsp_clock_init
+     480      480        2     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.text.R_BSP_SubClockStabilizeWaitAfterReset)
+     480      480        0     1                 $t
+     481      481        2     1                 R_BSP_SubClockStabilizeWaitAfterReset
+     484      484       7a     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.text.R_BSP_Init_RTC)
+     484      484        0     1                 $t
+     485      485       7a     1                 R_BSP_Init_RTC
+     4fe      4fe        2     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj:(.text.bsp_init_internal)
+     4fe      4fe        0     1                 $t
+     4ff      4ff        2     1                 bsp_init_internal
+     4ff      4ff        2     1                 bsp_init
+     500      500       84     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj:(.text.R_BSP_SoftwareDelay)
+     500      500        0     1                 $t
+     501      501       84     1                 R_BSP_SoftwareDelay
+     584      584        8     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj:(.text.bsp_prv_software_delay_loop)
+     584      584        0     1                 sw_delay_loop
+     584      584        0     1                 $t
+     585      585        8     1                 bsp_prv_software_delay_loop
+     58c      58c       44     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj:(.text.NMI_Handler)
+     58c      58c        0     1                 $t
+     58d      58d       44     1                 NMI_Handler
+     5d0      5d0       88     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj:(.text.bsp_irq_cfg)
+     5d0      5d0        0     1                 $t
+     5d1      5d1       88     1                 bsp_irq_cfg
+     658      658       52     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.text.R_BSP_RegisterProtectEnable)
+     658      658        0     1                 $t
+     659      659       52     1                 R_BSP_RegisterProtectEnable
+     6aa      6aa       4e     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.text.R_BSP_RegisterProtectDisable)
+     6aa      6aa        0     1                 $t
+     6ab      6ab       4e     1                 R_BSP_RegisterProtectDisable
+     6f8      6f8      356     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.R_CAN_Open)
+     6f8      6f8        0     1                 $t
+     6f9      6f9      356     1                 R_CAN_Open
+     a50      a50       86     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.R_CAN_Write)
+     a50      a50        0     1                 $t
+     a51      a51       86     1                 R_CAN_Write
+     ad6      ad6        4     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.R_CAN_Read)
+     ad6      ad6        0     1                 $t
+     ad7      ad7        4     1                 R_CAN_Read
+     ada      ada       e2     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.R_CAN_Close)
+     ada      ada        0     1                 $t
+     adb      adb       e2     1                 R_CAN_Close
+     bbc      bbc        a     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.R_CAN_ModeTransition)
+     bbc      bbc        0     1                 $t
+     bbd      bbd        a     1                 R_CAN_ModeTransition
+     bc6      bc6       2a     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.R_CAN_InfoGet)
+     bc6      bc6        0     1                 $t
+     bc7      bc7       2a     1                 R_CAN_InfoGet
+     bf0      bf0        e     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.R_CAN_CallbackSet)
+     bf0      bf0        0     1                 $t
+     bf1      bf1        e     1                 R_CAN_CallbackSet
+     c00      c00       c0     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.r_can_mode_transition)
+     c00      c00        0     1                 $t
+     c01      c01       c0     1                 r_can_mode_transition
+     cc0      cc0       3c     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.r_can_mailbox_id_set)
+     cc0      cc0        0     1                 $t
+     cc1      cc1       3c     1                 r_can_mailbox_id_set
+     cfc      cfc      114     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.can_error_isr)
+     cfc      cfc        0     1                 $t
+     cfd      cfd      114     1                 can_error_isr
+     e10      e10      1a8     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.can_rx_isr)
+     e10      e10        0     1                 $t
+     e11      e11      1a8     1                 can_rx_isr
+     fb8      fb8      11c     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.text.can_tx_isr)
+     fb8      fb8        0     1                 $t
+     fb9      fb9      11c     1                 can_tx_isr
+    10d4     10d4      478     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_Open)
+    10d4     10d4        0     1                 $t
+    10d5     10d5      478     1                 R_GPT_Open
+    154c     154c        a     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_Start)
+    154c     154c        0     1                 $t
+    154d     154d        a     1                 R_GPT_Start
+    1556     1556        a     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_Stop)
+    1556     1556        0     1                 $t
+    1557     1557        a     1                 R_GPT_Stop
+    1560     1560        a     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_Reset)
+    1560     1560        0     1                 $t
+    1561     1561        a     1                 R_GPT_Reset
+    156a     156a       36     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_Enable)
+    156a     156a        0     1                 $t
+    156b     156b       36     1                 R_GPT_Enable
+    15a0     15a0       1e     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_Disable)
+    15a0     15a0        0     1                 $t
+    15a1     15a1       1e     1                 R_GPT_Disable
+    15be     15be       38     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_PeriodSet)
+    15be     15be        0     1                 $t
+    15bf     15bf       38     1                 R_GPT_PeriodSet
+    15f6     15f6       a6     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_DutyCycleSet)
+    15f6     15f6        0     1                 $t
+    15f7     15f7       a6     1                 R_GPT_DutyCycleSet
+    169c     169c       1c     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_CompareMatchSet)
+    169c     169c        0     1                 $t
+    169d     169d       1c     1                 R_GPT_CompareMatchSet
+    16b8     16b8       3e     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_InfoGet)
+    16b8     16b8        0     1                 $t
+    16b9     16b9       3e     1                 R_GPT_InfoGet
+    16f6     16f6       12     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_StatusGet)
+    16f6     16f6        0     1                 $t
+    16f7     16f7       12     1                 R_GPT_StatusGet
+    1708     1708        e     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_CallbackSet)
+    1708     1708        0     1                 $t
+    1709     1709        e     1                 R_GPT_CallbackSet
+    1716     1716      132     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.R_GPT_Close)
+    1716     1716        0     1                 $t
+    1717     1717      132     1                 R_GPT_Close
+    1848     1848       6c     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.text.gpt_calculate_duty_cycle)
+    1848     1848        0     1                 $t
+    1849     1849       6c     1                 gpt_calculate_duty_cycle
+    18b4     18b4       16     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.text.R_IOPORT_Open)
+    18b4     18b4        0     1                 $t
+    18b5     18b5       16     1                 R_IOPORT_Open
+    18cc     18cc       be     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.text.r_ioport_pins_config)
+    18cc     18cc        0     1                 $t
+    18cd     18cd       be     1                 r_ioport_pins_config
+    198c     198c       ce     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.text.bsp_vbatt_init)
+    198c     198c        0     1                 $t
+    198d     198d       ce     1                 bsp_vbatt_init
+    1a5a     1a5a      34e     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.R_SCI_UART_Open)
+    1a5a     1a5a        0     1                 $t
+    1a5b     1a5b      34e     1                 R_SCI_UART_Open
+    1da8     1da8        a     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.R_SCI_UART_Read)
+    1da8     1da8        0     1                 $t
+    1da9     1da9        a     1                 R_SCI_UART_Read
+    1db2     1db2       4c     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.R_SCI_UART_Write)
+    1db2     1db2        0     1                 $t
+    1db3     1db3       4c     1                 R_SCI_UART_Write
+    1dfe     1dfe       68     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.R_SCI_UART_BaudSet)
+    1dfe     1dfe        0     1                 $t
+    1dff     1dff       68     1                 R_SCI_UART_BaudSet
+    1e66     1e66        c     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.R_SCI_UART_InfoGet)
+    1e66     1e66        0     1                 $t
+    1e67     1e67        c     1                 R_SCI_UART_InfoGet
+    1e72     1e72       22     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.R_SCI_UART_Abort)
+    1e72     1e72        0     1                 $t
+    1e73     1e73       22     1                 R_SCI_UART_Abort
+    1e94     1e94        e     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.R_SCI_UART_CallbackSet)
+    1e94     1e94        0     1                 $t
+    1e95     1e95        e     1                 R_SCI_UART_CallbackSet
+    1ea2     1ea2       ae     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.R_SCI_UART_Close)
+    1ea2     1ea2        0     1                 $t
+    1ea3     1ea3       ae     1                 R_SCI_UART_Close
+    1f50     1f50        e     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.R_SCI_UART_ReadStop)
+    1f50     1f50        0     1                 $t
+    1f51     1f51        e     1                 R_SCI_UART_ReadStop
+    1f5e     1f5e        4     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.R_SCI_UART_ReceiveSuspend)
+    1f5e     1f5e        0     1                 $t
+    1f5f     1f5f        4     1                 R_SCI_UART_ReceiveSuspend
+    1f62     1f62        4     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.R_SCI_UART_ReceiveResume)
+    1f62     1f62        0     1                 $t
+    1f63     1f63        4     1                 R_SCI_UART_ReceiveResume
+    1f66     1f66       86     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.sci_uart_txi_isr)
+    1f66     1f66        0     1                 $t
+    1f67     1f67       86     1                 sci_uart_txi_isr
+    1fec     1fec       4a     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.r_sci_uart_call_callback)
+    1fec     1fec        0     1                 $t
+    1fed     1fed       4a     1                 r_sci_uart_call_callback
+    2036     2036       88     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.sci_uart_rxi_isr)
+    2036     2036        0     1                 $t
+    2037     2037       88     1                 sci_uart_rxi_isr
+    20be     20be       4c     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.sci_uart_tei_isr)
+    20be     20be        0     1                 $t
+    20bf     20bf       4c     1                 sci_uart_tei_isr
+    210a     210a       74     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.text.sci_uart_eri_isr)
+    210a     210a        0     1                 $t
+    210b     210b       74     1                 sci_uart_eri_isr
+    217e     217e        2     2         CMakeFiles/ra6m4.elf.dir/ra_gen/common_data.c.obj:(.text.g_common_init)
+    217e     217e        0     1                 $t
+    217f     217f        2     1                 g_common_init
+    2180     2180        4     2         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.text.g_hal_init)
+    2180     2180        0     1                 $t
+    2181     2181        4     1                 g_hal_init
+    2184     2184        a     2         CMakeFiles/ra6m4.elf.dir/ra_gen/main.c.obj:(.text.main)
+    2184     2184        0     1                 $t
+    2185     2185        a     1                 main
+    218e     218e      13e     2         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.text.can_callback)
+    218e     218e        0     1                 $t
+    218f     218f      13e     1                 can_callback
+    22cc     22cc       46     2         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.text.user_uart_callback)
+    22cc     22cc        0     1                 $t
+    22cd     22cd       46     1                 user_uart_callback
+    2314     2314      430     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.text.hal_entry)
+    2314     2314        0     1                 $t
+    2315     2315      430     1                 hal_entry
+    273c     273c        0     1                 $d
+    2744     2744      194     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.text.service_rx)
+    2744     2744        0     1                 $t
+    2745     2745      194     1                 service_rx
+    28d4     28d4        0     1                 $d
+    28d8     28d8      118     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.text.pid_calc)
+    28d8     28d8        0     1                 $t
+    28d9     28d9      118     1                 pid_calc
+    29e4     29e4        0     1                 $d
+    29f0     29f0       78     2         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.text.motor_apply)
+    29f0     29f0        0     1                 $t
+    29f1     29f1       78     1                 motor_apply
+    2a68     2a68       1a     2         CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj:(.text.R_BSP_WarmStart)
+    2a68     2a68        0     1                 $t
+    2a69     2a69       1a     1                 R_BSP_WarmStart
+    2a82     2a82       7c     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libclang_rt.builtins.a(extendsfdf2.c.obj):(.text.__extendsfdf2)
+    2a82     2a82        0     1                 $t
+    2a83     2a83       7c     1                 __extendsfdf2
+    2afe     2afe       10     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libclang_rt.builtins.a(extendsfdf2.c.obj):(.text.__aeabi_f2d)
+    2afe     2afe        0     1                 $t
+    2aff     2aff       10     1                 __aeabi_f2d
+    2b0e     2b0e      1ae     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libclang_rt.builtins.a(udivmoddi4.c.obj):(.text.__udivmoddi4)
+    2b0e     2b0e        0     1                 $t
+    2b0f     2b0f      1ae     1                 __udivmoddi4
+    2cbc     2cbc        8     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(bzero.c.o):(.text.bzero)
+    2cbc     2cbc        0     1                 $t
+    2cbd     2cbd        8     1                 bzero
+    2cbd     2cbd        8     1                 __aeabi_memclr4
+    2cbd     2cbd        8     1                 __aeabi_memclr8
+    2cbd     2cbd        8     1                 __aeabi_memclr
+    2cc4     2cc4       12     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(memcpy.c.o):(.text.memcpy)
+    2cc4     2cc4        0     1                 $t
+    2cc5     2cc5       12     1                 memcpy
+    2cc5     2cc5       12     1                 __aeabi_memcpy4
+    2cc5     2cc5       12     1                 __aeabi_memcpy8
+    2cc5     2cc5       12     1                 __aeabi_memcpy
+    2cd6     2cd6        e     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(memset.c.o):(.text.memset)
+    2cd6     2cd6        0     1                 $t
+    2cd7     2cd7        e     1                 memset
+    2ce4     2ce4       14     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(set_tls.c.o):(.text._set_tls)
+    2ce4     2ce4        0     1                 $t
+    2ce5     2ce5       14     1                 _set_tls
+    2cf0     2cf0        0     1                 $d
+    2cf8     2cf8       28     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_misc_inittls.c.o):(.text._init_tls)
+    2cf8     2cf8        0     1                 $t
+    2cf9     2cf9       28     1                 _init_tls
+    2d10     2d10        0     1                 $d
+    2d20     2d20       44     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_sprintf.c.o):(.text.sprintf)
+    2d20     2d20        0     1                 $t
+    2d21     2d21       44     1                 sprintf
+    2d60     2d60        0     1                 $d
+    2d64     2d64       10     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_filestrput.c.o):(.text.__file_str_put)
+    2d64     2d64        0     1                 $t
+    2d65     2d65       10     1                 __file_str_put
+    2d74     2d74       3c     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_sscanf.c.o):(.text.sscanf)
+    2d74     2d74        0     1                 $t
+    2d75     2d75       3c     1                 sscanf
+    2dac     2dac        0     1                 $d
+    2db0     2db0       14     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_filestrget.c.o):(.text.__file_str_get)
+    2db0     2db0        0     1                 $t
+    2db1     2db1       14     1                 __file_str_get
+    2dc4     2dc4      984     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfprintf.c.o):(.text.vfprintf)
+    2dc4     2dc4        0     1                 $t
+    2dc5     2dc5      984     1                 vfprintf
+    2dc5     2dc5      984     1                 __d_vfprintf
+    2e4a     2e4a        0     1                 $d
+    2e54     2e54        0     1                 $t
+    3052     3052        0     1                 $d
+    3060     3060        0     1                 $t
+    373c     373c        0     1                 $d
+    3748     3748      150     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfprintf.c.o):(.text.skip_to_arg)
+    3748     3748        0     1                 $t
+    3749     3749      150     1                 skip_to_arg
+    3894     3894        0     1                 $d
+    3898     3898       44     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfprintf.c.o):(.text.__ultoa_invert)
+    3898     3898        0     1                 $t
+    3899     3899       44     1                 __ultoa_invert
+    38dc     38dc       10     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfprintf.c.o):(.text.OUTLINED_FUNCTION_0)
+    38dc     38dc        0     1                 $t
+    38dd     38dd       10     1                 OUTLINED_FUNCTION_0
+    38ec     38ec        6     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfprintf.c.o):(.text.OUTLINED_FUNCTION_1)
+    38ec     38ec        0     1                 $t
+    38ed     38ed        6     1                 OUTLINED_FUNCTION_1
+    38f2     38f2        6     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfprintf.c.o):(.text.OUTLINED_FUNCTION_2)
+    38f2     38f2        0     1                 $t
+    38f3     38f3        6     1                 OUTLINED_FUNCTION_2
+    38f8     38f8      110     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtox_engine.c.o):(.text.__dtox_engine)
+    38f8     38f8        0     1                 $t
+    38f9     38f9      110     1                 __dtox_engine
+    3a04     3a04        0     1                 $d
+    3a08     3a08       22     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libclang_rt.builtins.a(ashldi3.c.obj):(.text.__ashldi3)
+    3a08     3a08        0     1                 $t
+    3a09     3a09       22     1                 __ashldi3
+    3a09     3a09       22     1                 __aeabi_llsl
+    3a2a     3a2a       22     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libclang_rt.builtins.a(lshrdi3.c.obj):(.text.__lshrdi3)
+    3a2a     3a2a        0     1                 $t
+    3a2b     3a2b       22     1                 __lshrdi3
+    3a2b     3a2b       22     1                 __aeabi_llsr
+    3a4c     3a4c       14     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libclang_rt.builtins.a(aeabi_uldivmod.S.obj):(.text)
+    3a4c     3a4c        0     1                 $t
+    3a4d     3a4d       14     1                 __aeabi_uldivmod
+    3a60     3a60      a74     8         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o):(.text.vfscanf)
+    3a60     3a60        0     1                 $t
+    3a61     3a61      a74     1                 vfscanf
+    3a61     3a61      a74     1                 __d_vfscanf
+    3cd6     3cd6        0     1                 $d
+    3ce0     3ce0        0     1                 $t
+    3d80     3d80        0     1                 $d
+    3d98     3d98        0     1                 $t
+    415c     415c        0     1                 $d
+    4160     4160        0     1                 $t
+    44bc     44bc        0     1                 $d
+    44d4     44d4       34     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o):(.text.skip_spaces)
+    44d4     44d4        0     1                 $t
+    44d5     44d5       34     1                 skip_spaces
+    4504     4504        0     1                 $d
+    4508     4508       14     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o):(.text.scanf_getc)
+    4508     4508        0     1                 $t
+    4509     4509       14     1                 scanf_getc
+    451c     451c        e     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o):(.text.scanf_ungetc)
+    451c     451c        0     1                 $t
+    451d     451d        e     1                 scanf_ungetc
+    452a     452a       2c     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o):(.text.putval)
+    452a     452a        0     1                 $t
+    452b     452b       2c     1                 putval
+    4556     4556        8     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o):(.text.OUTLINED_FUNCTION_0)
+    4556     4556        0     1                 $t
+    4557     4557        8     1                 OUTLINED_FUNCTION_0
+    455e     455e        6     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o):(.text.OUTLINED_FUNCTION_1)
+    455e     455e        0     1                 $t
+    455f     455f        6     1                 OUTLINED_FUNCTION_1
+    4564     4564       14     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(memchr.c.o):(.text.memchr)
+    4564     4564        0     1                 $t
+    4565     4565       14     1                 memchr
+    4578     4578      128     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libclang_rt.builtins.a(truncdfsf2.c.obj):(.text.__truncdfsf2)
+    4578     4578        0     1                 $t
+    4579     4579      128     1                 __truncdfsf2
+    46a0     46a0       10     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libclang_rt.builtins.a(truncdfsf2.c.obj):(.text.__aeabi_d2f)
+    46a0     46a0        0     1                 $t
+    46a1     46a1       10     1                 __aeabi_d2f
+    46b0     46b0       4a     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_fgetc.c.o):(.text.getc)
+    46b0     46b0        0     1                 $t
+    46b1     46b1       4a     1                 getc
+    46b1     46b1       4a     1                 getc_unlocked
+    46b1     46b1       4a     1                 fgetc
+    46fa     46fa       30     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ungetc.c.o):(.text.ungetc)
+    46fa     46fa        0     1                 $t
+    46fb     46fb       30     1                 ungetc
+    4730     4730      188     8         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atod_ryu.c.o):(.text.__atod_engine)
+    4730     4730        0     1                 $t
+    4731     4731      188     1                 __atod_engine
+    48b0     48b0        0     1                 $d
+    48b8     48b8       62     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atod_ryu.c.o):(.text.mulShift64)
+    48b8     48b8        0     1                 $t
+    48b9     48b9       62     1                 mulShift64
+    491a     491a        e     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atod_ryu.c.o):(.text.OUTLINED_FUNCTION_0)
+    491a     491a        0     1                 $t
+    491b     491b        e     1                 OUTLINED_FUNCTION_0
+    4928     4928      128     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atof_ryu.c.o):(.text.__atof_engine)
+    4928     4928        0     1                 $t
+    4929     4929      128     1                 __atof_engine
+    4a4c     4a4c        0     1                 $d
+    4a50     4a50      434     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o):(.text.__dtoa_engine)
+    4a50     4a50        0     1                 $t
+    4a51     4a51      434     1                 __dtoa_engine
+    4e84     4e84       10     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o):(.text.div10)
+    4e84     4e84        0     1                 $t
+    4e85     4e85       10     1                 div10
+    4e94     4e94       1c     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o):(.text.umulh)
+    4e94     4e94        0     1                 $t
+    4e95     4e95       1c     1                 umulh
+    4eac     4eac        0     1                 $d
+    4eb0     4eb0      198     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o):(.text.mulShiftAll64)
+    4eb0     4eb0        0     1                 $t
+    4eb1     4eb1      198     1                 mulShiftAll64
+    5048     5048       26     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o):(.text.decimalLength17)
+    5048     5048        0     1                 $t
+    5049     5049       26     1                 decimalLength17
+    506e     506e       28     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_divpow2.c.o):(.text.__mulPow5InvDivPow2)
+    506e     506e        0     1                 $t
+    506f     506f       28     1                 __mulPow5InvDivPow2
+    5096     5096       2a     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_divpow2.c.o):(.text.mulShift32)
+    5096     5096        0     1                 $t
+    5097     5097       2a     1                 mulShift32
+    50c0     50c0       22     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_divpow2.c.o):(.text.__mulPow5divPow2)
+    50c0     50c0        0     1                 $t
+    50c1     50c1       22     1                 __mulPow5divPow2
+    50e4     50e4        c     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_log10.c.o):(.text.__log10Pow2)
+    50e4     50e4        0     1                 $t
+    50e5     50e5        c     1                 __log10Pow2
+    50ec     50ec        0     1                 $d
+    50f0     50f0        c     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_log10.c.o):(.text.__log10Pow5)
+    50f0     50f0        0     1                 $t
+    50f1     50f1        c     1                 __log10Pow5
+    50f8     50f8        0     1                 $d
+    50fc     50fc        c     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_log2pow5.c.o):(.text.__log2pow5)
+    50fc     50fc        0     1                 $t
+    50fd     50fd        c     1                 __log2pow5
+    5104     5104        0     1                 $d
+    5108     5108       10     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_log2pow5.c.o):(.text.__ceil_log2pow5)
+    5108     5108        0     1                 $t
+    5109     5109       10     1                 __ceil_log2pow5
+    5114     5114        0     1                 $d
+    5118     5118       10     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_pow5bits.c.o):(.text.__pow5bits)
+    5118     5118        0     1                 $t
+    5119     5119       10     1                 __pow5bits
+    5124     5124        0     1                 $d
+    5128     5128       34     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.text.__pow5Factor)
+    5128     5128        0     1                 $t
+    5129     5129       34     1                 __pow5Factor
+    5154     5154        0     1                 $d
+    515c     515c       cc     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.text.__double_computePow5)
+    515c     515c        0     1                 $t
+    515d     515d       cc     1                 __double_computePow5
+    521c     521c        0     1                 $d
+    5228     5228       d0     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.text.__double_computeInvPow5)
+    5228     5228        0     1                 $t
+    5229     5229       d0     1                 __double_computeInvPow5
+    52ec     52ec        0     1                 $d
+    52f8     52f8        8     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.text.OUTLINED_FUNCTION_0)
+    52f8     52f8        0     1                 $t
+    52f9     52f9        8     1                 OUTLINED_FUNCTION_0
+    5300     5300       10     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.text.OUTLINED_FUNCTION_1)
+    5300     5300        0     1                 $t
+    5301     5301       10     1                 OUTLINED_FUNCTION_1
+    5310     5310       10     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.text.OUTLINED_FUNCTION_2)
+    5310     5310        0     1                 $t
+    5311     5311       10     1                 OUTLINED_FUNCTION_2
+    5320     5320       10     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.text.OUTLINED_FUNCTION_3)
+    5320     5320        0     1                 $t
+    5321     5321       10     1                 OUTLINED_FUNCTION_3
+    5330     5330        e     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.text.OUTLINED_FUNCTION_4)
+    5330     5330        0     1                 $t
+    5331     5331        e     1                 OUTLINED_FUNCTION_4
+    533e     533e       38     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_umul128.c.o):(.text.__umul128)
+    533e     533e        0     1                 $t
+    533f     533f       38     1                 __umul128
+    5376     5376       30     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_umul128.c.o):(.text.__shiftright128)
+    5376     5376        0     1                 $t
+    5377     5377       30     1                 __shiftright128
+    53a6     53a6       18     2         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_string_strnlen.c.o):(.text.strnlen)
+    53a6     53a6        0     1                 $t
+    53a7     53a7       18     1                 strnlen
+    53c0     53c0       20     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libm_common_s_isnan.c.o):(.text.isnan)
+    53c0     53c0        0     1                 $t
+    53c1     53c1       20     1                 isnan
+    53c1     53c1       20     1                 __isnand
+    53c1     53c1       20     1                 isnanl
+    53c1     53c1       20     1                 __isnanl
+    53dc     53dc        0     1                 $d
+    53e0     53e0        a     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.rodata.g_prcr_masks)
+    53e0     53e0        a     1                 g_prcr_masks
+    53ec     53ec       10     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.rodata.nocache_list)
+    53ec     53ec       10     1                 nocache_list
+    53fc     53fc       18     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.rodata.g_init_info)
+    53fc     53fc       18     1                 g_init_info
+    5414     5414       3c     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.rodata.zero_list)
+    5414     5414       3c     1                 zero_list
+    5450     5450       90     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.rodata.copy_list)
+    5450     5450       90     1                 copy_list
+    54e0     54e0       1c     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.rodata.g_can_on_can)
+    54e0     54e0       1c     1                 g_can_on_can
+    54fc     54fc       34     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.rodata.g_timer_on_gpt)
+    54fc     54fc       34     1                 g_timer_on_gpt
+    5530     5530        6     2         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.rodata.g_vbatt_pins_input)
+    5530     5530        6     1                 g_vbatt_pins_input
+    5538     5538       2c     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.rodata.g_uart_on_sci)
+    5538     5538       2c     1                 g_uart_on_sci
+    5564     5564        8     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_can0_fifo_int_cfg)
+    5564     5564        8     1                 g_can0_fifo_int_cfg
+    556c     556c       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_can0_extended_cfg)
+    556c     556c       20     1                 g_can0_extended_cfg
+    558c     558c       18     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_can0_cfg)
+    558c     558c       18     1                 g_can0_cfg
+    55a4     55a4        c     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_can0)
+    55a4     55a4        c     1                 g_can0
+    55b0     55b0       14     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_uart1_cfg_extend)
+    55b0     55b0       14     1                 g_uart1_cfg_extend
+    55c4     55c4       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_uart1_cfg)
+    55c4     55c4       20     1                 g_uart1_cfg
+    55e4     55e4        c     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_uart1)
+    55e4     55e4        c     1                 g_uart1
+    55f0     55f0       58     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer3_extend)
+    55f0     55f0       58     1                 g_timer3_extend
+    5648     5648       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer3_cfg)
+    5648     5648       20     1                 g_timer3_cfg
+    5668     5668        c     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer3)
+    5668     5668        c     1                 g_timer3
+    5674     5674       58     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer0_extend)
+    5674     5674       58     1                 g_timer0_extend
+    56cc     56cc       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer0_cfg)
+    56cc     56cc       20     1                 g_timer0_cfg
+    56ec     56ec        c     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer0)
+    56ec     56ec        c     1                 g_timer0
+    56f8     56f8       14     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_uart0_cfg_extend)
+    56f8     56f8       14     1                 g_uart0_cfg_extend
+    570c     570c       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_uart0_cfg)
+    570c     570c       20     1                 g_uart0_cfg
+    572c     572c        c     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_uart0)
+    572c     572c        c     1                 g_uart0
+    5738     5738       58     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer2_extend)
+    5738     5738       58     1                 g_timer2_extend
+    5790     5790       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer2_cfg)
+    5790     5790       20     1                 g_timer2_cfg
+    57b0     57b0        c     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer2)
+    57b0     57b0        c     1                 g_timer2
+    57bc     57bc       58     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer1_extend)
+    57bc     57bc       58     1                 g_timer1_extend
+    5814     5814       20     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer1_cfg)
+    5814     5814       20     1                 g_timer1_cfg
+    5834     5834        c     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.rodata.g_timer1)
+    5834     5834        c     1                 g_timer1
+    5840     5840       70     4         CMakeFiles/ra6m4.elf.dir/ra_gen/pin_data.c.obj:(.rodata.g_bsp_pin_cfg_data)
+    5840     5840       70     1                 g_bsp_pin_cfg_data
+    58b0     58b0        c     4         CMakeFiles/ra6m4.elf.dir/ra_gen/pin_data.c.obj:(.rodata.g_bsp_pin_cfg)
+    58b0     58b0        c     1                 g_bsp_pin_cfg
+    58bc     58bc       1a     2         CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj:(.rodata.g_interrupt_event_link_select)
+    58bc     58bc       1a     1                 g_interrupt_event_link_select
+    58d6     58d6       a5     1         <internal>:(.rodata.str1.1)
+    597b     597b        3     1         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o):(.rodata.pstr_an)
+    597b     597b        3     1                 pstr_an
+    597e     597e        8     1         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o):(.rodata.pstr_nfinity)
+    597e     597e        8     1                 pstr_nfinity
+    5986     5986      180     1         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_ctype_ctype_.c.o):(.rodata._ctype_b)
+    5986     5986      180     1                 _ctype_b
+    5b08     5b08       d0     8         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.rodata.DOUBLE_POW5_SPLIT2)
+    5b08     5b08       d0     1                 DOUBLE_POW5_SPLIT2
+    5bd8     5bd8       d0     8         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.rodata.DOUBLE_POW5_TABLE)
+    5bd8     5bd8       d0     1                 DOUBLE_POW5_TABLE
+    5ca8     5ca8       54     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.rodata.POW5_OFFSETS)
+    5ca8     5ca8       54     1                 POW5_OFFSETS
+    5d00     5d00       f0     8         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o):(.rodata.DOUBLE_POW5_INV_SPLIT2)
+    5d00     5d00       f0     1                 DOUBLE_POW5_INV_SPLIT2
+    5df0     5df0       58     4         <internal>:(.rodata.str4.4)
+    5e48     5e48       4e     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj:(.version)
+    5e48     5e48        4     1                 g_fsp_version
+    5e4c     5e4c        6     1                 g_fsp_version_string
+    5e52     5e52       44     1                 g_fsp_version_build_string
+    5e96     5e96        0     1         __flash_readonly$$Limit = . 
+    5e96     5e96        0     1 __flash_preinit_array$$
+    5e96     5e96        0     1         __preinit_array_start = . 
+    5e96     5e96        0     1         __preinit_array_end = . 
+    5e96     5e96        0     1 __flash_init_array$$
+    5e96     5e96        0     1         __init_array_start = . 
+    5e96     5e96        0     1         __init_array_end = . 
+    5e96     5e96        0     1 __flash_fini_array$$
+    5e96     5e96        0     1         __fini_array_start = . 
+    5e96     5e96        0     1         __fini_array_end = . 
+    5e96     5e96        0     1 __flash_arm.exidx$$
+    5e96     5e96        0     1         __exidx_start = . 
+    5e96     5e96        0     1         __exidx_end = . 
+    6000     6000        0     1 .flash.endof
+    6000     6000        0     1         __ddsc_FLASH_END = . 
+    6000     6000        0     1 .flash.flat_nsc
+    6000     6000        0     1         __ddsc_FLASH_NSC = . 
+ 100a100  100a100        0     1 .option_setting_ofs0.startof
+ 100a100  100a100        0     1         __ddsc_OPTION_SETTING_OFS0_START = . 
+ 100a100  100a100        4     4 __option_setting_ofs0_reg$$
+ 100a100  100a100        0     1         __option_setting_ofs0_reg$$Base = . 
+ 100a100  100a100        4     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.option_setting_ofs0)
+ 100a100  100a100        4     1                 g_bsp_cfg_option_setting_ofs0
+ 100a104  100a104        0     1         __option_setting_ofs0_reg$$Limit = . 
+ 100a104  100a104        0     1 .option_setting_ofs0.endof
+ 100a104  100a104        0     1         __ddsc_OPTION_SETTING_OFS0_END = . 
+ 100a110  100a110        0     1 .option_setting_dualsel.startof
+ 100a110  100a110        0     1         __ddsc_OPTION_SETTING_DUALSEL_START = . 
+ 100a110  100a110        0     1 __option_setting_dualsel_reg$$
+ 100a110  100a110        0     1         __option_setting_dualsel_reg$$Base = . 
+ 100a110  100a110        0     1         __option_setting_dualsel_reg$$Limit = . 
+ 100a110  100a110        0     1 .option_setting_dualsel.endof
+ 100a110  100a110        0     1         __ddsc_OPTION_SETTING_DUALSEL_END = . 
+ 100a180  100a180        0     1 .option_setting_ofs1.startof
+ 100a180  100a180        0     1         __ddsc_OPTION_SETTING_OFS1_START = . 
+ 100a180  100a180        0     1 __option_setting_ofs1_reg$$
+ 100a180  100a180        0     1         __option_setting_ofs1_reg$$Base = . 
+ 100a180  100a180        0     1         __option_setting_ofs1_reg$$Limit = . 
+ 100a180  100a180        0     1 .option_setting_ofs1.endof
+ 100a180  100a180        0     1         __ddsc_OPTION_SETTING_OFS1_END = . 
+ 100a190  100a190        0     1 .option_setting_banksel.startof
+ 100a190  100a190        0     1         __ddsc_OPTION_SETTING_BANKSEL_START = . 
+ 100a190  100a190        0     1 __option_setting_banksel_reg$$
+ 100a190  100a190        0     1         __option_setting_banksel_reg$$Base = . 
+ 100a190  100a190        0     1         __option_setting_banksel_reg$$Limit = . 
+ 100a190  100a190        0     1 .option_setting_banksel.endof
+ 100a190  100a190        0     1         __ddsc_OPTION_SETTING_BANKSEL_END = . 
+ 100a1c0  100a1c0        0     1 .option_setting_bps.startof
+ 100a1c0  100a1c0        0     1         __ddsc_OPTION_SETTING_BPS_START = . 
+ 100a1c0  100a1c0        0     1 __option_setting_bps_reg$$
+ 100a1c0  100a1c0        0     1         __option_setting_bps_reg$$Base = . 
+ 100a1c0  100a1c0        0     1         __option_setting_bps_reg$$Limit = . 
+ 100a1c0  100a1c0        0     1 .option_setting_bps.endof
+ 100a1c0  100a1c0        0     1         __ddsc_OPTION_SETTING_BPS_END = . 
+ 100a1e0  100a1e0        0     1 .option_setting_pbps.startof
+ 100a1e0  100a1e0        0     1         __ddsc_OPTION_SETTING_PBPS_START = . 
+ 100a1e0  100a1e0        0     1 __option_setting_pbps_reg$$
+ 100a1e0  100a1e0        0     1         __option_setting_pbps_reg$$Base = . 
+ 100a1e0  100a1e0        0     1         __option_setting_pbps_reg$$Limit = . 
+ 100a1e0  100a1e0        0     1 .option_setting_pbps.endof
+ 100a1e0  100a1e0        0     1         __ddsc_OPTION_SETTING_PBPS_END = . 
+ 100a200  100a200        0     1 .option_setting_ofs1_sec.startof
+ 100a200  100a200        0     1         __ddsc_OPTION_SETTING_OFS1_SEC_START = . 
+ 100a200  100a200        4     4 __option_setting_ofs1_sec_reg$$
+ 100a200  100a200        0     1         __option_setting_ofs1_sec_reg$$Base = . 
+ 100a200  100a200        4     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.option_setting_ofs1_sec)
+ 100a200  100a200        4     1                 g_bsp_cfg_option_setting_ofs1_sec
+ 100a204  100a204        0     1         __option_setting_ofs1_sec_reg$$Limit = . 
+ 100a204  100a204        0     1 .option_setting_ofs1_sec.endof
+ 100a204  100a204        0     1         __ddsc_OPTION_SETTING_OFS1_SEC_END = . 
+ 100a210  100a210        0     1 .option_setting_banksel_sec.startof
+ 100a210  100a210        0     1         __ddsc_OPTION_SETTING_BANKSEL_SEC_START = . 
+ 100a210  100a210        0     1 __option_setting_banksel_sec_reg$$
+ 100a210  100a210        0     1         __option_setting_banksel_sec_reg$$Base = . 
+ 100a210  100a210        0     1         __option_setting_banksel_sec_reg$$Limit = . 
+ 100a210  100a210        0     1 .option_setting_banksel_sec.endof
+ 100a210  100a210        0     1         __ddsc_OPTION_SETTING_BANKSEL_SEC_END = . 
+ 100a240  100a240        0     1 .option_setting_bps_sec.startof
+ 100a240  100a240        0     1         __ddsc_OPTION_SETTING_BPS_SEC_START = . 
+ 100a240  100a240        0     1 __option_setting_bps_sec_reg$$
+ 100a240  100a240        0     1         __option_setting_bps_sec_reg$$Base = . 
+ 100a240  100a240        0     1         __option_setting_bps_sec_reg$$Limit = . 
+ 100a240  100a240        0     1 .option_setting_bps_sec.endof
+ 100a240  100a240        0     1         __ddsc_OPTION_SETTING_BPS_SEC_END = . 
+ 100a260  100a260        0     1 .option_setting_pbps_sec.startof
+ 100a260  100a260        0     1         __ddsc_OPTION_SETTING_PBPS_SEC_START = . 
+ 100a260  100a260        0     1 __option_setting_pbps_sec_reg$$
+ 100a260  100a260        0     1         __option_setting_pbps_sec_reg$$Base = . 
+ 100a260  100a260        0     1         __option_setting_pbps_sec_reg$$Limit = . 
+ 100a260  100a260        0     1 .option_setting_pbps_sec.endof
+ 100a260  100a260        0     1         __ddsc_OPTION_SETTING_PBPS_SEC_END = . 
+ 100a280  100a280        0     1 .option_setting_ofs1_sel.startof
+ 100a280  100a280        0     1         __ddsc_OPTION_SETTING_OFS1_SEL_START = . 
+ 100a280  100a280        4     4 __option_setting_ofs1_sel_reg$$
+ 100a280  100a280        0     1         __option_setting_ofs1_sel_reg$$Base = . 
+ 100a280  100a280        4     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.option_setting_ofs1_sel)
+ 100a280  100a280        4     1                 g_bsp_cfg_option_setting_ofs1_sel
+ 100a284  100a284        0     1         __option_setting_ofs1_sel_reg$$Limit = . 
+ 100a284  100a284        0     1 .option_setting_ofs1_sel.endof
+ 100a284  100a284        0     1         __ddsc_OPTION_SETTING_OFS1_SEL_END = . 
+ 100a290  100a290        0     1 .option_setting_banksel_sel.startof
+ 100a290  100a290        0     1         __ddsc_OPTION_SETTING_BANKSEL_SEL_START = . 
+ 100a290  100a290        0     1 __option_setting_banksel_sel_reg$$
+ 100a290  100a290        0     1         __option_setting_banksel_sel_reg$$Base = . 
+ 100a290  100a290        0     1         __option_setting_banksel_sel_reg$$Limit = . 
+ 100a290  100a290        0     1 .option_setting_banksel_sel.endof
+ 100a290  100a290        0     1         __ddsc_OPTION_SETTING_BANKSEL_SEL_END = . 
+ 100a2c0  100a2c0        0     1 .option_setting_bps_sel.startof
+ 100a2c0  100a2c0        0     1         __ddsc_OPTION_SETTING_BPS_SEL_START = . 
+ 100a2c0  100a2c0        0     1 __option_setting_bps_sel_reg$$
+ 100a2c0  100a2c0        0     1         __option_setting_bps_sel_reg$$Base = . 
+ 100a2c0  100a2c0        0     1         __option_setting_bps_sel_reg$$Limit = . 
+ 100a2c0  100a2c0        0     1 .option_setting_bps_sel.endof
+ 100a2c0  100a2c0        0     1         __ddsc_OPTION_SETTING_BPS_SEL_END = . 
+ 100a2c0  100a2c0        0     1 PROVIDE( __tls_base = ADDR(__ram_tdata$$) )
+ 100a2c0  100a2c0        0     1 PROVIDE( __tdata_source = LOADADDR(__ram_tdata$$) )
+ 100a2c0  100a2c0        0     1 PROVIDE( __tdata_size = SIZEOF(__ram_tdata$$) )
+ 100a2c0  100a2c0        0     1 PROVIDE( __tbss_offset = ADDR(__ram_tbss$$) - ADDR(__ram_tdata$$) )
+ 100a2c0  100a2c0        0     1 PROVIDE( __tbss_size = SIZEOF(__ram_tbss$$) )
+ 100a2c0  100a2c0        0     1 PROVIDE( __arm32_tls_tcb_offset = 8 )
+       0        0       3e     1 .ARM.attributes
+       0        0       3e     1         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\crt0.o:(.ARM.attributes)
+       0        0     2806     1 .debug_abbrev
+       0        0       a7     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj:(.debug_abbrev)
+      a7       a7      1ff     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj:(.debug_abbrev)
+     2a6      2a6      2fc     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.debug_abbrev)
+     5a2      5a2      149     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj:(.debug_abbrev)
+     6eb      6eb       ad     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj:(.debug_abbrev)
+     798      798      1ff     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj:(.debug_abbrev)
+     997      997       44     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_io.c.obj:(.debug_abbrev)
+     9db      9db      18c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj:(.debug_abbrev)
+     b67      b67      209     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.debug_abbrev)
+     d70      d70       67     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_sbrk.c.obj:(.debug_abbrev)
+     dd7      dd7       a2     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.debug_abbrev)
+     e79      e79      405     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.debug_abbrev)
+    127e     127e      425     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.debug_abbrev)
+    16a3     16a3      32c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.debug_abbrev)
+    19cf     19cf      403     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.debug_abbrev)
+    1dd2     1dd2      10d     1         CMakeFiles/ra6m4.elf.dir/ra_gen/common_data.c.obj:(.debug_abbrev)
+    1edf     1edf      25e     1         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.debug_abbrev)
+    213d     213d       3c     1         CMakeFiles/ra6m4.elf.dir/ra_gen/main.c.obj:(.debug_abbrev)
+    2179     2179       e6     1         CMakeFiles/ra6m4.elf.dir/ra_gen/pin_data.c.obj:(.debug_abbrev)
+    225f     225f       a8     1         CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj:(.debug_abbrev)
+    2307     2307      3f9     1         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.debug_abbrev)
+    2700     2700      106     1         CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj:(.debug_abbrev)
+       0        0    30e3a     1 .debug_info
+       0        0       b1     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj:(.debug_info)
+      b1       b1      ac6     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj:(.debug_info)
+     b77      b77     5189     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.debug_info)
+    5d00     5d00      59c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj:(.debug_info)
+    629c     629c      104     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj:(.debug_info)
+    63a0     63a0      dba     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj:(.debug_info)
+    715a     715a       43     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_io.c.obj:(.debug_info)
+    719d     719d     176b     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj:(.debug_info)
+    8908     8908     2ec8     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.debug_info)
+    b7d0     b7d0       5f     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_sbrk.c.obj:(.debug_info)
+    b82f     b82f      1ea     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.debug_info)
+    ba19     ba19     3ab4     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.debug_info)
+    f4cd     f4cd     854b     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.debug_info)
+   17a18    17a18     5e11     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.debug_info)
+   1d829    1d829     764a     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.debug_info)
+   24e73    24e73      bf4     1         CMakeFiles/ra6m4.elf.dir/ra_gen/common_data.c.obj:(.debug_info)
+   25a67    25a67     6b7d     1         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.debug_info)
+   2c5e4    2c5e4       37     1         CMakeFiles/ra6m4.elf.dir/ra_gen/main.c.obj:(.debug_info)
+   2c61b    2c61b      49b     1         CMakeFiles/ra6m4.elf.dir/ra_gen/pin_data.c.obj:(.debug_info)
+   2cab6    2cab6      4cf     1         CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj:(.debug_info)
+   2cf85    2cf85     34ba     1         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.debug_info)
+   3043f    3043f      9fb     1         CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj:(.debug_info)
+       0        0      653     1 .debug_rnglists
+       0        0       17     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj:(.debug_rnglists)
+      17       17       1b     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj:(.debug_rnglists)
+      32       32       5c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.debug_rnglists)
+      8e       8e       1a     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj:(.debug_rnglists)
+      a8       a8       18     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj:(.debug_rnglists)
+      c0       c0       17     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj:(.debug_rnglists)
+      d7       d7       17     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.debug_rnglists)
+      ee       ee       fc     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.debug_rnglists)
+     1ea      1ea      180     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.debug_rnglists)
+     36a      36a       4e     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.debug_rnglists)
+     3b8      3b8      16a     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.debug_rnglists)
+     522      522      131     1         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.debug_rnglists)
+       0        0     f894     1 .debug_str_offsets
+       0        0       3c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj:(.debug_str_offsets)
+      3c       3c      344     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj:(.debug_str_offsets)
+     380      380     12a8     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.debug_str_offsets)
+    1628     1628      468     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj:(.debug_str_offsets)
+    1a90     1a90       74     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj:(.debug_str_offsets)
+    1b04     1b04      698     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj:(.debug_str_offsets)
+    219c     219c       24     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_io.c.obj:(.debug_str_offsets)
+    21c0     21c0      8f8     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj:(.debug_str_offsets)
+    2ab8     2ab8      bac     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.debug_str_offsets)
+    3664     3664       2c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_sbrk.c.obj:(.debug_str_offsets)
+    3690     3690       a0     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.debug_str_offsets)
+    3730     3730     10a4     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.debug_str_offsets)
+    47d4     47d4     2464     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.debug_str_offsets)
+    6c38     6c38     1adc     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.debug_str_offsets)
+    8714     8714     218c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.debug_str_offsets)
+    a8a0     a8a0      8c0     1         CMakeFiles/ra6m4.elf.dir/ra_gen/common_data.c.obj:(.debug_str_offsets)
+    b160     b160     2338     1         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.debug_str_offsets)
+    d498     d498       1c     1         CMakeFiles/ra6m4.elf.dir/ra_gen/main.c.obj:(.debug_str_offsets)
+    d4b4     d4b4      428     1         CMakeFiles/ra6m4.elf.dir/ra_gen/pin_data.c.obj:(.debug_str_offsets)
+    d8dc     d8dc      49c     1         CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj:(.debug_str_offsets)
+    dd78     dd78     12fc     1         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.debug_str_offsets)
+    f074     f074      820     1         CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj:(.debug_str_offsets)
+       0        0    103a5     1 .debug_str
+       0        0    103a5     1         <internal>:(.debug_str)
+       0        0      818     1 .debug_addr
+       0        0       1c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj:(.debug_addr)
+      1c       1c       30     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj:(.debug_addr)
+      4c       4c       90     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.debug_addr)
+      dc       dc       20     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj:(.debug_addr)
+      fc       fc       20     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj:(.debug_addr)
+     11c      11c       1c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj:(.debug_addr)
+     138      138        c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_io.c.obj:(.debug_addr)
+     144      144       24     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj:(.debug_addr)
+     168      168       30     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.debug_addr)
+     198      198        c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_sbrk.c.obj:(.debug_addr)
+     1a4      1a4       24     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.debug_addr)
+     1c8      1c8      110     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.debug_addr)
+     2d8      2d8      1e0     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.debug_addr)
+     4b8      4b8       94     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.debug_addr)
+     54c      54c      110     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.debug_addr)
+     65c      65c       14     1         CMakeFiles/ra6m4.elf.dir/ra_gen/common_data.c.obj:(.debug_addr)
+     670      670       98     1         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.debug_addr)
+     708      708        c     1         CMakeFiles/ra6m4.elf.dir/ra_gen/main.c.obj:(.debug_addr)
+     714      714       10     1         CMakeFiles/ra6m4.elf.dir/ra_gen/pin_data.c.obj:(.debug_addr)
+     724      724       10     1         CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj:(.debug_addr)
+     734      734       d4     1         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.debug_addr)
+     808      808       10     1         CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj:(.debug_addr)
+       0        0       29     1 .comment
+       0        0       29     1         <internal>:(.comment)
+       0        0      ae8     4 .debug_frame
+       0        0       34     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj:(.debug_frame)
+      34       34       60     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj:(.debug_frame)
+      94       94      104     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.debug_frame)
+     198      198       44     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj:(.debug_frame)
+     1dc      1dc       34     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj:(.debug_frame)
+     210      210       44     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj:(.debug_frame)
+     254      254       34     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj:(.debug_frame)
+     288      288       3c     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.debug_frame)
+     2c4      2c4       2c     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_sbrk.c.obj:(.debug_frame)
+     2f0      2f0      158     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.debug_frame)
+     448      448      240     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.debug_frame)
+     688      688      158     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.debug_frame)
+     7e0      7e0      190     4         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.debug_frame)
+     970      970       24     4         CMakeFiles/ra6m4.elf.dir/ra_gen/common_data.c.obj:(.debug_frame)
+     994      994       24     4         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.debug_frame)
+     9b8      9b8       2c     4         CMakeFiles/ra6m4.elf.dir/ra_gen/main.c.obj:(.debug_frame)
+     9e4      9e4       bc     4         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.debug_frame)
+     aa0      aa0       24     4         CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj:(.debug_frame)
+     ac4      ac4       24     4         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(read_tp.S.o):(.debug_frame)
+       0        0     489a     1 .debug_line
+       0        0       be     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj:(.debug_line)
+      be       be      19b     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj:(.debug_line)
+     259      259      5af     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.debug_line)
+     808      808      111     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj:(.debug_line)
+     919      919      14e     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj:(.debug_line)
+     a67      a67      13b     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj:(.debug_line)
+     ba2      ba2       8e     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_io.c.obj:(.debug_line)
+     c30      c30      104     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj:(.debug_line)
+     d34      d34      11e     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.debug_line)
+     e52      e52       b3     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_sbrk.c.obj:(.debug_line)
+     f05      f05       a7     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj:(.debug_line)
+     fac      fac      b65     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.debug_line)
+    1b11     1b11      f77     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.debug_line)
+    2a88     2a88      585     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.debug_line)
+    300d     300d      b71     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.debug_line)
+    3b7e     3b7e      102     1         CMakeFiles/ra6m4.elf.dir/ra_gen/common_data.c.obj:(.debug_line)
+    3c80     3c80      1af     1         CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj:(.debug_line)
+    3e2f     3e2f       71     1         CMakeFiles/ra6m4.elf.dir/ra_gen/main.c.obj:(.debug_line)
+    3ea0     3ea0       c0     1         CMakeFiles/ra6m4.elf.dir/ra_gen/pin_data.c.obj:(.debug_line)
+    3f60     3f60       a3     1         CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj:(.debug_line)
+    4003     4003      776     1         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.debug_line)
+    4779     4779      121     1         CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj:(.debug_line)
+       0        0      b92     1 .debug_line_str
+       0        0      b92     1         <internal>:(.debug_line_str)
+       0        0     2b7f     1 .debug_loclists
+       0        0       60     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj:(.debug_loclists)
+      60       60      21c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj:(.debug_loclists)
+     27c      27c       1d     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj:(.debug_loclists)
+     299      299      10e     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj:(.debug_loclists)
+     3a7      3a7       35     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj:(.debug_loclists)
+     3dc      3dc       48     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj:(.debug_loclists)
+     424      424       44     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj:(.debug_loclists)
+     468      468       1e     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_sbrk.c.obj:(.debug_loclists)
+     486      486      8f2     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj:(.debug_loclists)
+     d78      d78      a96     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj:(.debug_loclists)
+    180e     180e      43c     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj:(.debug_loclists)
+    1c4a     1c4a      737     1         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj:(.debug_loclists)
+    2381     2381      7e0     1         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj:(.debug_loclists)
+    2b61     2b61       1e     1         CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj:(.debug_loclists)
+       0        0     2a60     4 .symtab
+       0        0     2a60     4         <internal>:(.symtab)
+       0        0      925     1 .shstrtab
+       0        0      925     1         <internal>:(.shstrtab)
+       0        0     2781     1 .strtab
+       0        0     2781     1         <internal>:(.strtab)
+
+Cross Reference Table
+
+Symbol                                            File
+memcpy                                            C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(memcpy.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\crt0.o
+memset                                            C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(memset.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\crt0.o
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(bzero.c.o)
+_set_tls                                          C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(set_tls.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\crt0.o
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+main                                              CMakeFiles/ra6m4.elf.dir/ra_gen/main.c.obj
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\crt0.o
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+__tls_base                                        C:/works/C/ra6m4\fsp_gen.lld:692
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\crt0.o
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+Reset_Handler                                     CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+SystemInit                                        CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+Default_Handler                                   CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+g_main_stack                                      CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+__Vectors                                         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+NMI_Handler                                       CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+HardFault_Handler                                 CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+MemManage_Handler                                 CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+BusFault_Handler                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+UsageFault_Handler                                CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+SecureFault_Handler                               CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+SVC_Handler                                       CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+DebugMon_Handler                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+PendSV_Handler                                    CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+SysTick_Handler                                   CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c.obj
+R_BSP_WarmStart                                   CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+bsp_clock_init                                    CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+SystemCoreClockUpdate                             CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+R_BSP_Init_RTC                                    CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+R_BSP_RegisterProtectDisable                      CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj
+R_BSP_RegisterProtectEnable                       CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj
+_init_tls                                         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_misc_inittls.c.o)
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+__init_array_start                                C:/works/C/ra6m4\fsp_gen.lld:404
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+__init_array_end                                  C:/works/C/ra6m4\fsp_gen.lld:407
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+bsp_irq_cfg                                       CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+bsp_init                                          CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+g_init_info                                       CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+__aeabi_memclr4                                   C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(bzero.c.o)
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+__aeabi_memcpy4                                   C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(memcpy.c.o)
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+SystemCoreClock                                   CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+R_BSP_SoftwareDelay                               CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+R_BSP_SubClockStabilizeWaitAfterReset             CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_clocks.c.obj
+bsp_init_internal                                 CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_common.c.obj
+bsp_prv_software_delay_loop                       CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_delay.c.obj
+g_bsp_group_irq_sources                           CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_group_irq.c.obj
+g_protect_pfswe_counter                           CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_io.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj
+g_interrupt_event_link_select                     CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj
+gp_renesas_isr_context                            CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_irq.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+g_protect_counters                                CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/all/bsp_register_protection.c.obj
+__ospi0_cs0_noinit_nocache$$Base                  C:/works/C/ra6m4\fsp_gen.lld:237
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_zero_nocache$$Limit                   C:/works/C/ra6m4\fsp_gen.lld:249
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_noinit_nocache$$Base                        C:/works/C/ra6m4\fsp_gen.lld:289
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_zero_nocache$$Limit                         C:/works/C/ra6m4\fsp_gen.lld:302
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_zero_nocache$$Base                    C:/works/C/ra6m4\fsp_gen.lld:245
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_zero$$Base                            C:/works/C/ra6m4\fsp_gen.lld:262
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_zero$$Limit                           C:/works/C/ra6m4\fsp_gen.lld:265
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_zero_nocache$$Base                          C:/works/C/ra6m4\fsp_gen.lld:297
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_zero$$Base                                  C:/works/C/ra6m4\fsp_gen.lld:318
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_zero$$Limit                                 C:/works/C/ra6m4\fsp_gen.lld:322
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_tbss$$Base                                  C:/works/C/ra6m4\fsp_gen.lld:336
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_tbss$$Limit                                 C:/works/C/ra6m4\fsp_gen.lld:341
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_qspi_flash$$Base                 C:/works/C/ra6m4\fsp_gen.lld:45
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_qspi_flash$$Limit                C:/works/C/ra6m4\fsp_gen.lld:50
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_qspi_flash$$Load                 C:/works/C/ra6m4\fsp_gen.lld:45
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_ospi0_cs1$$Base                  C:/works/C/ra6m4\fsp_gen.lld:108
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_ospi0_cs1$$Limit                 C:/works/C/ra6m4\fsp_gen.lld:113
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_ospi0_cs1$$Load                  C:/works/C/ra6m4\fsp_gen.lld:108
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_data_flash$$Base                 C:/works/C/ra6m4\fsp_gen.lld:160
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_data_flash$$Limit                C:/works/C/ra6m4\fsp_gen.lld:165
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_data_flash$$Load                 C:/works/C/ra6m4\fsp_gen.lld:160
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_flash$$Base                      C:/works/C/ra6m4\fsp_gen.lld:227
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_flash$$Limit                     C:/works/C/ra6m4\fsp_gen.lld:232
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ospi0_cs0_from_flash$$Load                      C:/works/C/ra6m4\fsp_gen.lld:227
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_qspi_flash$$Base                       C:/works/C/ra6m4\fsp_gen.lld:68
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_qspi_flash$$Limit                      C:/works/C/ra6m4\fsp_gen.lld:73
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_qspi_flash$$Load                       C:/works/C/ra6m4\fsp_gen.lld:68
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_ospi0_cs1$$Base                        C:/works/C/ra6m4\fsp_gen.lld:120
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_ospi0_cs1$$Limit                       C:/works/C/ra6m4\fsp_gen.lld:125
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_ospi0_cs1$$Load                        C:/works/C/ra6m4\fsp_gen.lld:120
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_data_flash$$Base                       C:/works/C/ra6m4\fsp_gen.lld:172
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_data_flash$$Limit                      C:/works/C/ra6m4\fsp_gen.lld:177
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_data_flash$$Load                       C:/works/C/ra6m4\fsp_gen.lld:172
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_flash$$Base                            C:/works/C/ra6m4\fsp_gen.lld:277
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_flash$$Limit                           C:/works/C/ra6m4\fsp_gen.lld:284
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_from_flash$$Load                            C:/works/C/ra6m4\fsp_gen.lld:277
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_tdata$$Base                                 C:/works/C/ra6m4\fsp_gen.lld:327
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_tdata$$Limit                                C:/works/C/ra6m4\fsp_gen.lld:331
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+__ram_tdata$$Load                                 C:/works/C/ra6m4\fsp_gen.lld:327
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/bsp/mcu/ra6m4/bsp_linker.c.obj
+R_CAN_Open                                        CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+__aeabi_memclr8                                   C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(bzero.c.o)
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+R_CAN_Write                                       CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+R_CAN_Read                                        CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+R_CAN_Close                                       CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+R_CAN_ModeTransition                              CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+R_CAN_InfoGet                                     CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+R_CAN_CallbackSet                                 CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+can_error_isr                                     CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj
+can_rx_isr                                        CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj
+can_tx_isr                                        CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj
+g_can_on_can                                      CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_can/r_can.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+R_GPT_Open                                        CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_Start                                       CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_Stop                                        CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_Reset                                       CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_Enable                                      CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_Disable                                     CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_PeriodSet                                   CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_DutyCycleSet                                CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_CompareMatchSet                             CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_InfoGet                                     CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_StatusGet                                   CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_CallbackSet                                 CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+R_GPT_Close                                       CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+g_timer_on_gpt                                    CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_gpt/r_gpt.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+R_IOPORT_Open                                     CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_ioport/r_ioport.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj
+R_SCI_UART_Open                                   CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+R_SCI_UART_Read                                   CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+R_SCI_UART_Write                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+R_SCI_UART_BaudSet                                CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+R_SCI_UART_InfoGet                                CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+R_SCI_UART_Abort                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+R_SCI_UART_CallbackSet                            CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+R_SCI_UART_Close                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+R_SCI_UART_ReadStop                               CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+R_SCI_UART_ReceiveSuspend                         CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+R_SCI_UART_ReceiveResume                          CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+sci_uart_txi_isr                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj
+sci_uart_rxi_isr                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj
+__aeabi_memcpy                                    C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(memcpy.c.o)
+                                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_misc_inittls.c.o)
+sci_uart_tei_isr                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj
+sci_uart_eri_isr                                  CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj
+g_uart_on_sci                                     CMakeFiles/ra6m4.elf.dir/ra/fsp/src/r_sci_uart/r_sci_uart.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_common_init                                     CMakeFiles/ra6m4.elf.dir/ra_gen/common_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_ioport_ctrl                                     CMakeFiles/ra6m4.elf.dir/ra_gen/common_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj
+g_bsp_pin_cfg                                     CMakeFiles/ra6m4.elf.dir/ra_gen/pin_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/common_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_warmstart.c.obj
+g_hal_init                                        CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+g_can0_bit_timing_cfg                             CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_can0_mailbox_mask                               CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_can0_mailbox                                    CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_can0_fifo_int_cfg                               CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_can0_rx_fifo_cfg                                CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_can0_extended_cfg                               CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_can0_cfg                                        CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+can_callback                                      CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_can0_ctrl                                       CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_can0                                            CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+g_uart1_baud_setting                              CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_uart1_cfg_extend                                CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_uart1_cfg                                       CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_uart1_ctrl                                      CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_uart1                                           CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+g_timer3_extend                                   CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer3_cfg                                      CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer3_ctrl                                     CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer3                                          CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+g_timer0_extend                                   CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer0_cfg                                      CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer0_ctrl                                     CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer0                                          CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+g_uart0_baud_setting                              CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_uart0_cfg_extend                                CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_uart0_cfg                                       CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+user_uart_callback                                CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_uart0_ctrl                                      CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_uart0                                           CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+g_timer2_extend                                   CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer2_cfg                                      CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer2_ctrl                                     CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer2                                          CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+g_timer1_extend                                   CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer1_cfg                                      CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer1_ctrl                                     CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+g_timer1                                          CMakeFiles/ra6m4.elf.dir/ra_gen/hal_data.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+hal_entry                                         CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+                                                  CMakeFiles/ra6m4.elf.dir/ra_gen/main.c.obj
+g_bsp_pin_cfg_data                                CMakeFiles/ra6m4.elf.dir/ra_gen/pin_data.c.obj
+g_vector_table                                    CMakeFiles/ra6m4.elf.dir/ra_gen/vector_data.c.obj
+sprintf                                           C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_sprintf.c.o)
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+sscanf                                            C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_sscanf.c.o)
+                                                  CMakeFiles/ra6m4.elf.dir/src/hal_entry.c.obj
+bzero                                             C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(bzero.c.o)
+__aeabi_memclr                                    C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(bzero.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_misc_inittls.c.o)
+__aeabi_memcpy8                                   C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(memcpy.c.o)
+__tls                                             C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(tls.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(read_tp.S.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(set_tls.c.o)
+__arm32_tls_tcb_offset                            C:/works/C/ra6m4\fsp_gen.lld:697
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(set_tls.c.o)
+__tdata_source                                    C:/works/C/ra6m4\fsp_gen.lld:693
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_misc_inittls.c.o)
+__tdata_size                                      C:/works/C/ra6m4\fsp_gen.lld:694
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_misc_inittls.c.o)
+__tbss_offset                                     C:/works/C/ra6m4\fsp_gen.lld:695
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_misc_inittls.c.o)
+__tbss_size                                       C:/works/C/ra6m4\fsp_gen.lld:696
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_misc_inittls.c.o)
+vfprintf                                          C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfprintf.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_sprintf.c.o)
+__file_str_put                                    C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_filestrput.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_sprintf.c.o)
+vfscanf                                           C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_sscanf.c.o)
+__file_str_get                                    C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_filestrget.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_sscanf.c.o)
+__dtox_engine                                     C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtox_engine.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfprintf.c.o)
+__dtoa_engine                                     C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfprintf.c.o)
+strnlen                                           C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_string_strnlen.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfprintf.c.o)
+__d_vfprintf                                      C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfprintf.c.o)
+memchr                                            C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(memchr.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o)
+__isnand                                          C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libm_common_s_isnan.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o)
+__atod_engine                                     C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atod_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o)
+__atof_engine                                     C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atof_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o)
+_ctype_b                                          C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_ctype_ctype_.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o)
+getc                                              C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_fgetc.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o)
+ungetc                                            C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ungetc.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o)
+__d_vfscanf                                       C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_vfscanf.c.o)
+getc_unlocked                                     C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_fgetc.c.o)
+fgetc                                             C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_fgetc.c.o)
+__log2pow5                                        C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_log2pow5.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atod_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atof_ryu.c.o)
+__ceil_log2pow5                                   C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_log2pow5.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atod_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atof_ryu.c.o)
+__double_computePow5                              C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atod_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_divpow2.c.o)
+__double_computeInvPow5                           C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atod_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_divpow2.c.o)
+__pow5Factor                                      C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atod_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o)
+__umul128                                         C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_umul128.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atod_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o)
+__shiftright128                                   C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_umul128.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atod_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o)
+__mulPow5divPow2                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_divpow2.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atof_ryu.c.o)
+__mulPow5InvDivPow2                               C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_divpow2.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_atof_ryu.c.o)
+__log10Pow2                                       C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_log10.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o)
+__pow5bits                                        C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_pow5bits.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_table.c.o)
+__log10Pow5                                       C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_ryu_log10.c.o)
+                                                  C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libc_stdio_dtoa_ryu.c.o)
+isnan                                             C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libm_common_s_isnan.c.o)
+isnanl                                            C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libm_common_s_isnan.c.o)
+__isnanl                                          C:\renesas_toolchain\arm-llvm\22.1.0\ATfE-22.1.0-Windows-x86_64\bin\..\lib\clang-runtimes/arm-none-eabi/armv8m.main_hard_fp_exn_rtti_unaligned_size\lib\libc.a(libm_common_s_isnan.c.o)

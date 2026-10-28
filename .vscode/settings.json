@@ -1,0 +1,75 @@
+{
+  "cmake.configureOnOpen": true,
+  "cmake.configureOnEdit": true,
+  "cmake.useCMakePresets": "never",
+  "cmake.options.statusBarVisibility": "visible",
+  "cmake.sourceDirectory": "${workspaceFolder}",
+  "cmake.buildDirectory": "${workspaceFolder}/build/${buildType}",
+  "cmake.preferredGenerators": [
+    "Ninja",
+    "MinGW Makefiles",
+    "Unix Makefiles"
+  ],
+  "cmake.cmakePath": "C:/renesas_toolchain/cmake/3.31.8/cmake-3.31.8-windows-x86_64/bin/cmake.exe",
+  "cmake.generator": "Ninja",
+  "cmake.environment": {
+    "ARM_LLVM_TOOLCHAIN_PATH": "C:/renesas_toolchain/arm-llvm/22.1.0/ATfE-22.1.0-Windows-x86_64/bin",
+    "RASC_EXE_PATH": "C:/renesas_toolchain/sc/ra/fsp_6.6.0/eclipse/rasc.exe",
+    "PATH": "C:/renesas_toolchain/ninja-build;C:/renesas_toolchain/cmake/3.31.8/cmake-3.31.8-windows-x86_64/bin;${env:PATH}"
+  },
+  "configureEnvironment": {
+    "ARM_LLVM_TOOLCHAIN_PATH": "C:/renesas_toolchain/arm-llvm/22.1.0/ATfE-22.1.0-Windows-x86_64/bin",
+    "RASC_EXE_PATH": "C:/renesas_toolchain/sc/ra/fsp_6.6.0/eclipse/rasc.exe",
+    "PATH": "C:/renesas_toolchain/ninja-build;C:/renesas_toolchain/cmake/3.31.8/cmake-3.31.8-windows-x86_64/bin;${env:PATH}"
+  },
+  "cmake.configureSettings": {
+    "CMAKE_MAKE_PROGRAM": "C:/renesas_toolchain/ninja-build/ninja.exe"
+  },
+  "cmake.debugConfig": {
+    "name": "Renesas GDB Debugging",
+    "type": "renesas-hardware",
+    "request": "launch",
+    "target": {
+      "deviceFamily": "RA",
+      "device": "R7FA6M4AF",
+      "debuggerType": "SEGGERJLINKARM"
+    },
+    "cwd": "${command:renesas.debug.supportFolder}",
+    "images": []
+  },
+  "clangd.arguments": [
+    "--query-driver=${env:ARM_LLVM_TOOLCHAIN_PATH}*",
+    "--compile-commands-dir=${workspaceFolder}",
+    "--background-index"
+  ],
+  "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+  "cmake.options.advanced": {
+    "testPreset": {
+      "statusBarVisibility": "hidden"
+    },
+    "packagePreset": {
+      "statusBarVisibility": "hidden"
+    },
+    "cpack": {
+      "statusBarVisibility": "hidden"
+    },
+    "ctest": {
+      "statusBarVisibility": "hidden"
+    },
+    "workflow": {
+      "statusBarVisibility": "hidden"
+    },
+    "workflowPreset": {
+      "statusBarVisibility": "hidden"
+    },
+    "build": {
+      "statusBarVisibility": "inherit"
+    },
+    "launch": {
+      "statusBarVisibility": "inherit"
+    },
+    "debug": {
+      "statusBarVisibility": "inherit"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "name": "Renesas GDB Debugging",
+      "type": "renesas-hardware",
+      "request": "launch",
+      "target": {
+        "deviceFamily": "RA",
+        "device": "R7FA6M4AF",
+        "debuggerType": "SEGGERJLINKARM"
+      },
+      "executable": "${workspaceFolder}/build/Debug/ra6m4.elf",
+      "images": [
+        {
+          "text": "${workspaceFolder}/build/Debug/ra6m4.elf"
+        }
+      ]
+    }
+  ],
+  "version": "0.2.0"
+}

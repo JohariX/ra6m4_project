@@ -1,0 +1,113 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 1
+  },
+  "vendor": {
+    "renesas": {
+      "renesasPresetVersion": 1
+    }
+  },
+  "$comment": "This preset is intended for CI and Web IDE usage only. Environment variables for the toolchain path (ARM_LLVM_TOOLCHAIN_PATH) and the FSP Smart Configurator path (RASC_EXE_PATH) must be defined to use it.",
+  "configurePresets": [
+    {
+      "name": "EnvironmentSetupConfig",
+      "hidden": true,
+      "inherits": "OSConfig",
+      "toolchainFile": "${sourceDir}/cmake/llvm.cmake",
+      "environment": {
+        "ARM_LLVM_TOOLCHAIN_PATH": "$penv{ARM_LLVM_TOOLCHAIN_PATH}",
+        "RASC_EXE_PATH": "$penv{RASC_EXE_PATH}",
+        "NINJA_PROGRAM": "ninja"
+      },
+      "cacheVariables": {
+        "CMAKE_MAKE_PROGRAM": "$env{NINJA_PROGRAM}",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/cmake/llvm.cmake"
+      }
+    },
+    {
+      "name": "BaseConfig",
+      "hidden": true,
+      "environment": {
+        "EXE_SUFFIX": ""
+      }
+    },
+    {
+      "name": "OSConfig",
+      "inherits": "BaseConfig",
+      "hidden": true,
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "environment": {
+        "EXE_SUFFIX": ".exe"
+      }
+    },
+    {
+      "name": "DebugCI",
+      "inherits": "EnvironmentSetupConfig",
+      "displayName": "Debug CI",
+      "description": "Debug build using Ninja generator",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/Debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "condition": {
+        "type": "allOf",
+        "conditions": [
+          {
+            "type": "matches",
+            "string": "$env{RASC_EXE_PATH}",
+            "regex": ".+"
+          },
+          {
+            "type": "matches",
+            "string": "$env{ARM_LLVM_TOOLCHAIN_PATH}",
+            "regex": ".+"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ReleaseCI",
+      "inherits": "EnvironmentSetupConfig",
+      "displayName": "Release CI",
+      "description": "Release build using Ninja generator",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/Release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      },
+      "condition": {
+        "type": "allOf",
+        "conditions": [
+          {
+            "type": "matches",
+            "string": "$env{RASC_EXE_PATH}",
+            "regex": ".+"
+          },
+          {
+            "type": "matches",
+            "string": "$env{ARM_LLVM_TOOLCHAIN_PATH}",
+            "regex": ".+"
+          }
+        ]
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "DebugCI",
+      "configurePreset": "DebugCI"
+    },
+    {
+      "name": "ReleaseCI",
+      "configurePreset": "ReleaseCI"
+    }
+  ]
+}

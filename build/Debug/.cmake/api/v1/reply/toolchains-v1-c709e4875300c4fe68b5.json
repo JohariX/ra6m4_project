@@ -1,0 +1,92 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "Clang",
+				"implicit" : {},
+				"path" : "C:/renesas_toolchain/arm-llvm/22.1.0/ATfE-22.1.0-Windows-x86_64/bin/clang.exe",
+				"version" : ""
+			},
+			"language" : "ASM",
+			"sourceFileExtensions" : 
+			[
+				"s",
+				"S",
+				"asm"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "Clang",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/renesas_toolchain/arm-llvm/22.1.0/ATfE-22.1.0-Windows-x86_64/lib/clang/22/include",
+						"C:/renesas_toolchain/arm-llvm/22.1.0/ATfE-22.1.0-Windows-x86_64/lib/clang-runtimes/arm-none-eabi/include"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "C:/renesas_toolchain/arm-llvm/22.1.0/ATfE-22.1.0-Windows-x86_64/bin/clang.exe",
+				"target" : "arm-none-eabi",
+				"version" : "22.1.0"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "Clang",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/renesas_toolchain/arm-llvm/22.1.0/ATfE-22.1.0-Windows-x86_64/lib/clang-runtimes/arm-none-eabi/include/c++/v1",
+						"C:/renesas_toolchain/arm-llvm/22.1.0/ATfE-22.1.0-Windows-x86_64/lib/clang/22/include",
+						"C:/renesas_toolchain/arm-llvm/22.1.0/ATfE-22.1.0-Windows-x86_64/lib/clang-runtimes/arm-none-eabi/include"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "C:/renesas_toolchain/arm-llvm/22.1.0/ATfE-22.1.0-Windows-x86_64/bin/clang++.exe",
+				"target" : "arm-none-eabi",
+				"version" : "22.1.0"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm",
+				"ccm",
+				"cxxm",
+				"c++m"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}
