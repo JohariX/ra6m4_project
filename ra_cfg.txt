@@ -615,7 +615,7 @@ FSP Configuration
       Input: Receive FIFO: Receive ID 1: ID: 0
       Input: Receive FIFO: Receive ID 2: ID: 0
       Input: Mailbox 0-3 Group: Mailbox ID: Mailbox 0 ID: 0
-      Input: Mailbox 0-3 Group: Mailbox ID: Mailbox 1 ID: 1
+      Input: Mailbox 0-3 Group: Mailbox ID: Mailbox 1 ID: 0x180
       Input: Mailbox 0-3 Group: Mailbox ID: Mailbox 2 ID: 2
       Input: Mailbox 0-3 Group: Mailbox ID: Mailbox 3 ID: 3
       Input: Mailbox 4-7 Group: Mailbox ID: Mailbox 4 ID: 4

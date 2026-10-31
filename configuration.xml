@@ -584,7 +584,7 @@
       <property id="module.driver.can.rxfifo_id1.id" value="0"/>
       <property id="module.driver.can.rxfifo_id2.id" value="0"/>
       <property id="module.driver.can.mailbox0_id" value="0"/>
-      <property id="module.driver.can.mailbox1_id" value="1"/>
+      <property id="module.driver.can.mailbox1_id" value="0x180"/>
       <property id="module.driver.can.mailbox2_id" value="2"/>
       <property id="module.driver.can.mailbox3_id" value="3"/>
       <property id="module.driver.can.mailbox4_id" value="4"/>

@@ -48,7 +48,7 @@ can_mailbox_t g_can0_mailbox[CAN_NO_OF_MAILBOXES_g_can0] =
         .frame_type              =  CAN_FRAME_TYPE_REMOTE
 },
     {
-        .mailbox_id              =  1,
+        .mailbox_id              =  0x180,
         .id_mode                 =  CAN_ID_MODE_STANDARD,
         .mailbox_type            =  CAN_MAILBOX_RECEIVE,
         .frame_type              =  CAN_FRAME_TYPE_DATA
