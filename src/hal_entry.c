@@ -55,7 +55,7 @@ bsp_ipc_semaphore_handle_t g_core_start_semaphore =
    退出该模式（M:1）后才接收上位机控制。P405 作模式指示 LED。 */
 #define CTL_MODE_UART     (0)       /* 蓝牙/串口优先（忽略 CAN 0x180） */
 #define CTL_MODE_CAN      (1)       /* 上位机优先（正常处理 0x180） */
-#define CTL_MODE_DEFAULT  (CTL_MODE_UART)   /* 上电默认蓝牙/串口优先 */
+#define CTL_MODE_DEFAULT  (CTL_MODE_CAN)    /* 上电默认上位机 CAN 优先（比赛固件）；蓝牙手动发 M:0 或 0x181 idx15=0 抢回 */
 #define LED_PORT          (R_PORT4)         /* P405：模式指示 LED（端口4） */
 #define LED_PIN_BIT       (5U)              /* P405 = 端口4 bit5 */
 #define LED_ON            (1)               /* 蓝牙/串口模式=亮 */
@@ -92,6 +92,10 @@ static volatile uint8_t  g_can_prev_en = 0;   /* enable 上次电平（0→1 边
 static volatile uint8_t  g_can_prev_flags = 0; /* flags 上次值（clear_fault 边沿） */
 static volatile uint8_t  g_can_fault   = 0;   /* 0x300.err 首个故障码（0=无） */
 static volatile uint8_t  g_can_bus_err = 0;   /* 0x300.can_err（总线错误位） */
+/* 0x282 参数应答挂起：ISR 只组包置标志，主循环发送（FSP write 非 ISR 安全） */
+static volatile uint8_t g_param_rsp_pending = 0;
+static uint8_t  g_param_rsp_idx = 0, g_param_rsp_op = 0, g_param_rsp_status = 0, g_param_rsp_seq = 0;
+static int32_t  g_param_rsp_value = 0;
 static uint32_t g_can_seq      = 0;          /* 发送帧 seq */
 static uint32_t g_boot_id      = 1;          /* 复位 +1 */
 static int32_t  g_enc_cum_l = 0, g_enc_cum_r = 0;  /* 上电累计编码器计数 */
@@ -191,12 +195,35 @@ static void can_send_282(uint8_t idx, uint8_t op, int32_t value, uint8_t status,
     can_send(CAN_MAILBOX_ID_TX_FIFO, CAN_ID_PARAM_RSP, d);
 }
 
+static void led_update_mode(void);   /* 前置声明：控制权切换后刷新 LED */
+
 /* 参数读写（协议 §6）。写只允许 IDLE；返回读到/写后的值，*status 置应答码。
    kp/ki 为 kp_milli/ki_milli（×1000），读写时与 g_kp_int/g_ki_int(×100) 换算。 */
 static int32_t can_param_access(uint8_t idx, uint8_t op, int32_t value, uint8_t *status)
 {
     int32_t r = 0;
     *status = 0U;
+
+    /* idx15：控制权 ctrl_mode（0=UART/BT, 1=CAN）。写需静止/IDLE，否则 status=3 */
+    if (idx == 15)
+    {
+        if (op == 1)
+        {
+            if (value != 0 && value != 1) { *status = 2U; return g_ctl_mode; }
+            if (g_can_state != CAN_STATE_IDLE || g_left_target || g_right_target)
+            { *status = 3U; return g_ctl_mode; }
+            g_ctl_mode = (uint8_t) value;
+            g_can_state = CAN_STATE_IDLE;
+            g_can_prev_en = 1;          /* 抑制下一帧 enable=1 的假上升沿 */
+            g_can_prev_flags = 0;
+            g_left_target = 0;
+            g_right_target = 0;
+            pid_reset_state();
+            led_update_mode();
+        }
+        return g_ctl_mode;
+    }
+
     switch (idx)
     {
         case 0:  r = CAN_PROTO_VER;      break;                  /* proto_ver 只读 */
@@ -467,26 +494,30 @@ void can_callback(can_callback_args_t *p_args)
 
     if (CAN_ID_CMD == id)      /* 0x180：v_ref(mm/s)/w_ref(mrad/s)/mode/flags/seq 小端 */
     {
-        if (g_ctl_mode != CTL_MODE_CAN)
-        {
-            /* 蓝牙/串口优先：忽略上位机 0x180 运动命令，防止其停车帧覆盖蓝牙目标。
-               g_can_age_ms 不更新 → 恒超时 → 停车只看串口超时 */
-            return;
-        }
         int16_t v = (int16_t)(f->data[0] | ((uint16_t) f->data[1] << 8));
         int16_t w = (int16_t)(f->data[2] | ((uint16_t) f->data[3] << 8));
         uint8_t mode  = f->data[4];
         uint8_t flags = f->data[5];
         uint8_t en    = flags & 0x01U;
+        uint8_t prev_en    = g_can_prev_en;     /* 边沿判断用旧电平 */
+        uint8_t prev_flags = g_can_prev_flags;
 
+        /* 1. 任何模式都更新遥测/边沿快照，保证上位机可见 cmd_age */
         g_can_v_ref = can_clamp_i16(v, -CAN_MAX_V_MM_S, CAN_MAX_V_MM_S);
         g_can_w_ref = can_clamp_i16(w, -CAN_MAX_W_MRAD_S, CAN_MAX_W_MRAD_S);
         g_can_mode  = mode;
         g_can_flags = flags;
         g_can_age_ms = 0;             /* 距最后 0x180，独立于串口 */
+        g_can_bus_err &= (uint8_t) ~0x03U;   /* 成功收帧 → 清 warning/passive 锁存位 */
+        g_can_prev_en    = en;
+        g_can_prev_flags = flags;
 
+        /* 2. 非 CAN 模式：只更新遥测，不应用运动目标 */
+        if (g_ctl_mode != CTL_MODE_CAN) { return; }
+
+        /* 3. CAN 模式：现有模式状态机 */
         /* enable 0→1 上升沿：仅从 IDLE 进入运动模式（协议 §7.6：不能把长高电平当新 0→1） */
-        if (en && !g_can_prev_en)
+        if (en && !prev_en)
         {
             if (g_can_state == CAN_STATE_IDLE && (mode == CAN_STATE_TELEOP || mode == CAN_STATE_AUTO))
             {
@@ -500,7 +531,7 @@ void can_callback(can_callback_args_t *p_args)
             }
         }
         /* clear_fault 上升沿：FAULT → 静止 → 回 IDLE（协议 §5.4） */
-        if ((flags & 0x02U) && !(g_can_prev_flags & 0x02U) && (g_can_state == CAN_STATE_FAULT))
+        if ((flags & 0x02U) && !(prev_flags & 0x02U) && (g_can_state == CAN_STATE_FAULT))
         {
             g_can_state = CAN_STATE_IDLE;
             g_can_fault = 0;
@@ -520,10 +551,8 @@ void can_callback(can_callback_args_t *p_args)
             g_left_target  = mm_s_to_units((int32_t) g_can_v_ref - dv);
             g_right_target = mm_s_to_units((int32_t) g_can_v_ref + dv);
         }
-        g_can_prev_en    = en;
-        g_can_prev_flags = flags;
     }
-    else if (CAN_ID_PARAM_REQ == id)   /* 0x181：参数读/写请求 → 0x282 应答 */
+    else if (CAN_ID_PARAM_REQ == id)   /* 0x181：参数读/写请求 → 组包挂起，主循环发 0x282 */
     {
         uint8_t idx = f->data[0];
         uint8_t op  = f->data[1];
@@ -532,7 +561,13 @@ void can_callback(can_callback_args_t *p_args)
         uint8_t seq = f->data[6];
         uint8_t st  = 0U;
         int32_t out = can_param_access(idx, op, val, &st);
-        can_send_282(idx, op, out, st, seq);
+        /* 不在 ISR 写 TX FIFO：只缓存结果，主循环发送 */
+        g_param_rsp_idx     = idx;
+        g_param_rsp_op      = op;
+        g_param_rsp_value   = out;
+        g_param_rsp_status  = st;
+        g_param_rsp_seq     = seq;
+        g_param_rsp_pending = 1U;
     }
 }
 
@@ -639,9 +674,18 @@ void hal_entry(void)
         {
             last_pid_ms = g_tick_ms;
 
-            /* 停车：CAN 与串口两个源都超时才停（任一活跃即保持，兼容并行控制）。
-               CAN 用 g_can_age_ms（仅 0x180 清零，独立 200ms）；串口用 g_last_cmd_ms。 */
-            if ((g_can_age_ms > CAN_TIMEOUT_MS) && (g_tick_ms - g_last_cmd_ms > RX_TIMEOUT_MS))
+            /* 停车：按当前控制源判定超时（避免另一源的遥测给当前源“续命”）。
+               CAN 源看 g_can_age_ms；UART/BT 源看 g_last_cmd_ms。 */
+            uint8_t src_timeout;
+            if (g_ctl_mode == CTL_MODE_CAN)
+            {
+                src_timeout = (g_can_age_ms > CAN_TIMEOUT_MS) ? 1U : 0U;
+            }
+            else
+            {
+                src_timeout = ((g_tick_ms - g_last_cmd_ms) > RX_TIMEOUT_MS) ? 1U : 0U;
+            }
+            if (src_timeout)
             {
                 g_left_target  = 0;
                 g_right_target = 0;
@@ -716,6 +760,13 @@ void hal_entry(void)
         can_update_status();
         if (g_tick_ms - last_can280_ms >= 10U)  { last_can280_ms  = g_tick_ms; can_send_280(); }  /* 100Hz */
         if (g_tick_ms - last_can300_ms >= 100U) { last_can300_ms = g_tick_ms; can_send_300(); } /* 10Hz */
+
+        /* 0x282 参数应答：从 ISR 挂起，主循环发送（避免 ISR 写 TX FIFO 丢帧） */
+        if (g_param_rsp_pending)
+        {
+            g_param_rsp_pending = 0U;
+            can_send_282(g_param_rsp_idx, g_param_rsp_op, g_param_rsp_value, g_param_rsp_status, g_param_rsp_seq);
+        }
 
         R_BSP_SoftwareDelay(10U, BSP_DELAY_UNITS_MILLISECONDS);
     }
