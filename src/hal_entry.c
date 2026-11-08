@@ -50,6 +50,17 @@ bsp_ipc_semaphore_handle_t g_core_start_semaphore =
 #define CAN_TRACK_MM      (121)     /* 轮距 121.4mm → 0x181 返回整数 121（协议参数 idx3） */
 #define CAN_WHEEL_MM      (65)      /* 轮径 65mm（协议参数 idx2） */
 
+/* === 控制源模式（蓝牙/串口 vs 上位机 CAN 互斥） ===
+   蓝牙模式下忽略上位机 0x180 运动命令，防止其停车帧覆盖蓝牙目标；
+   退出该模式（M:1）后才接收上位机控制。P405 作模式指示 LED。 */
+#define CTL_MODE_UART     (0)       /* 蓝牙/串口优先（忽略 CAN 0x180） */
+#define CTL_MODE_CAN      (1)       /* 上位机优先（正常处理 0x180） */
+#define CTL_MODE_DEFAULT  (CTL_MODE_UART)   /* 上电默认蓝牙/串口优先 */
+#define LED_PORT          (R_PORT4)         /* P405：模式指示 LED（端口4） */
+#define LED_PIN_BIT       (5U)              /* P405 = 端口4 bit5 */
+#define LED_ON            (1)               /* 蓝牙/串口模式=亮 */
+#define LED_OFF           (0)               /* 上位机 CAN 模式=灭 */
+
 /* 速度/里程换算（实物标定：13PPR×4×22.569≈1174/轮转，轮径65mm，轮距121.4mm） */
 #define MM_TO_CNT_Q       (2873)     /* 1mm/s ≈ 2.873 速度单位（每500ms计数）×1000 */
 #define TRACK_W_MM_Q      (1214)     /* 轮距 121.4mm ×10 */
@@ -67,6 +78,7 @@ static volatile int32_t  g_kp_int       = PID_KP_DEFAULT;  /* Kp×100 */
 static volatile int32_t  g_ki_int       = PID_KI_DEFAULT;  /* Ki×100 */
 static volatile int32_t  g_kd_int       = PID_KD_DEFAULT;  /* Kd×100 */
 static volatile uint32_t g_last_cmd_ms  = 0;
+static volatile uint8_t  g_ctl_mode = CTL_MODE_DEFAULT;  /* 控制源：蓝牙/串口 或 上位机 CAN */
 
 /* === CAN 变量 === */
 static volatile uint32_t g_can_age_ms = 0;   /* 距最后 0x180 的 ms，饱和 65535 */
@@ -269,6 +281,24 @@ static int32_t pid_calc(int32_t target, int32_t actual,
 /* Kp:%d / Ki:%d / Kd:%d  → 调共用 PID 参数（均×100） */
 /* T:%d                   → 原地旋转。正=逆时针(左反右正)，负=顺时针，0=停 */
 
+/* === P405 模式指示 LED：蓝牙/串口=亮，上位机 CAN=灭（直接驱动端口寄存器） === */
+static void led_set_level(int on)
+{
+    if (on) { LED_PORT->PODR_b.PODR5 = 1; }
+    else    { LED_PORT->PODR_b.PODR5 = 0; }
+}
+
+static void led_init(void)
+{
+    LED_PORT->PDR_b.PDR5 = 1;   /* P405 设为输出 */
+    led_set_level((g_ctl_mode == CTL_MODE_CAN) ? LED_OFF : LED_ON);
+}
+
+static void led_update_mode(void)
+{
+    led_set_level((g_ctl_mode == CTL_MODE_CAN) ? LED_OFF : LED_ON);
+}
+
 /* 回显同时发往有线(SCI9)和无线(SCI0)，方便无线链路验证 */
 static void ack_both(const char *s, uint32_t n)
 {
@@ -349,6 +379,19 @@ static void parse_rx_line(void)
         uint32_t n = (uint32_t) sprintf(ack, "OK T:%d\r\n", v);
         ack_both(ack, n);
     }
+    else if (1 == sscanf(g_rx_buf, "M:%d", &v))
+    {
+        /* 控制源切换：M:0=蓝牙/串口优先（忽略 CAN 0x180），M:1=上位机优先。切换即停车 */
+        if (v == 0)      { g_ctl_mode = CTL_MODE_UART; }
+        else if (v == 1) { g_ctl_mode = CTL_MODE_CAN; }
+        g_left_target = 0; g_right_target = 0;
+        g_last_cmd_ms = g_tick_ms;
+        pid_reset_state();
+        led_update_mode();
+        uint32_t n = (uint32_t) sprintf(ack, "OK M:%d (%s)\r\n", g_ctl_mode,
+                                        (g_ctl_mode == CTL_MODE_CAN) ? "CAN" : "UART");
+        ack_both(ack, n);
+    }
     g_rx_idx = 0;
 }
 
@@ -424,6 +467,12 @@ void can_callback(can_callback_args_t *p_args)
 
     if (CAN_ID_CMD == id)      /* 0x180：v_ref(mm/s)/w_ref(mrad/s)/mode/flags/seq 小端 */
     {
+        if (g_ctl_mode != CTL_MODE_CAN)
+        {
+            /* 蓝牙/串口优先：忽略上位机 0x180 运动命令，防止其停车帧覆盖蓝牙目标。
+               g_can_age_ms 不更新 → 恒超时 → 停车只看串口超时 */
+            return;
+        }
         int16_t v = (int16_t)(f->data[0] | ((uint16_t) f->data[1] << 8));
         int16_t w = (int16_t)(f->data[2] | ((uint16_t) f->data[3] << 8));
         uint8_t mode  = f->data[4];
@@ -562,6 +611,9 @@ void hal_entry(void)
     {
         g_can0.p_api->modeTransition(g_can0.p_ctrl, CAN_OPERATION_MODE_NORMAL, CAN_TEST_MODE_DISABLED);
     }
+
+    /* P405 模式指示 LED（蓝牙/串口=亮，上位机 CAN=灭） */
+    led_init();
 
     int32_t prev_l = 0, prev_r = 0;   /* 编码器上次计数值（差分） */
     uint32_t last_pid_ms = 0;
